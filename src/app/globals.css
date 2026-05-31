@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-primary: #15663a;
+  --color-deep-forest: #15663a;
+  --color-forest-dark: #004c28;
+  --color-safety-orange: #f2691f;
+  --color-orange-hot: #fd7127;
+  --color-midnight-moss: #15241a;
+  --color-mist-green: #f3f6f1;
+  --color-surface: #f7faf5;
+  --color-sage: #94e1aa;
+
+  /* Fonts wired from next/font (see layout.tsx) with safe fallbacks */
+  --font-anton: var(--font-anton-src), "Anton", sans-serif;
+  --font-barlow: var(--font-barlow-src), "Barlow Condensed", sans-serif;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-midnight-moss);
+    font-family: var(--font-barlow);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-anton);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Reduced-motion respect */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

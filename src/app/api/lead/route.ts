@@ -1,0 +1,67 @@
+import { NextRequest, NextResponse } from 'next/server';
+import sgMail from '@sendgrid/mail';
+
+export const runtime = 'nodejs';
+
+export async function POST(req: NextRequest) {
+  try {
+    const data = await req.json();
+    const { type = 'Lead', name, phone, email, address, service, lotSize, frequency, message } = data;
+
+    if (!name || !phone) {
+      return NextResponse.json({ error: 'Name and phone are required.' }, { status: 400 });
+    }
+
+    const apiKey = process.env.SENDGRID_API_KEY;
+    const to = process.env.LEAD_TO_EMAIL;
+    const from = process.env.LEAD_FROM_EMAIL;
+
+    if (!apiKey || !to || !from) {
+      console.error('Missing SendGrid env vars. Lead was not emailed:', data);
+      return NextResponse.json({ error: 'Email is not configured yet.' }, { status: 500 });
+    }
+
+    sgMail.setApiKey(apiKey);
+
+    const rows = [
+      ['Type', type],
+      ['Name', name],
+      ['Phone', phone],
+      ['Email', email],
+      ['Address / City', address],
+      ['Service', service],
+      ['Yard size', lotSize],
+      ['Frequency', frequency],
+      ['Message', message],
+    ].filter(([, v]) => v);
+
+    const textBody = rows.map(([k, v]) => `${k}: ${v}`).join('\n');
+    const htmlBody = `
+      <h2 style="font-family:sans-serif;color:#15663a;">New ${type} — Southern Buck Lawn</h2>
+      <table style="font-family:sans-serif;border-collapse:collapse;">
+        ${rows
+          .map(
+            ([k, v]) =>
+              `<tr><td style="padding:6px 12px;font-weight:bold;background:#f3f6f1;">${k}</td><td style="padding:6px 12px;">${String(
+                v,
+              ).replace(/</g, '&lt;')}</td></tr>`,
+          )
+          .join('')}
+      </table>
+    `;
+
+    await sgMail.send({
+      to,
+      from,
+      replyTo: email || undefined,
+      subject: `New ${type} from ${name}`,
+      text: textBody,
+      html: htmlBody,
+    });
+
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error('Lead send error:', err);
+    return NextResponse.json({ error: 'Failed to send.' }, { status: 500 });
+  }
+}

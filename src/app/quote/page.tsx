@@ -34,7 +34,7 @@ export default function QuotePage() {
                 <Mail className="h-6 w-6 text-safety-orange" /> {SITE.email}
               </a>
               <p className="flex items-center gap-3 font-barlow text-lg">
-                <Clock className="h-6 w-6 text-safety-orange" /> Mon&ndash;Fri 7AM&ndash;6PM
+                <Clock className="h-6 w-6 text-safety-orange" /> Open 7 days &middot; Mon&ndash;Fri 6AM&ndash;6:30PM
               </p>
               <p className="flex items-center gap-3 font-barlow text-lg">
                 <ShieldCheck className="h-6 w-6 text-safety-orange" /> Licensed &amp; insured
@@ -43,7 +43,7 @@ export default function QuotePage() {
 
             <div className="border-t border-white/15 pt-6">
               <p className="font-barlow text-sm uppercase tracking-widest text-safety-orange">Serving</p>
-              <p className="mt-1 font-barlow text-lg text-white/85">Walker &middot; Denham Springs &middot; Baton Rouge &middot; Livingston Parish</p>
+              <p className="mt-1 font-barlow text-lg text-white/85">Walker &middot; Denham Springs &middot; Baton Rouge &middot; Gonzales &middot; Livingston Parish</p>
             </div>
           </div>
 

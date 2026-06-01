@@ -25,10 +25,10 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-safety-orange" /> {SITE.email}
               </a>
               <p className="flex items-center gap-2 text-white/80">
-                <MapPin className="h-4 w-4 text-safety-orange" /> {SITE.city}, {SITE.region} {SITE.postalCode}
+                <MapPin className="h-4 w-4 text-safety-orange" /> {SITE.street}, {SITE.city}, {SITE.region} {SITE.postalCode}
               </p>
               <p className="flex items-center gap-2 text-white/80">
-                <Clock className="h-4 w-4 text-safety-orange" /> Mon&ndash;Fri 7AM&ndash;6PM, Sat by appointment
+                <Clock className="h-4 w-4 text-safety-orange" /> Mon&ndash;Fri 6AM&ndash;6:30PM, Sat 6AM&ndash;6PM, Sun 7AM&ndash;4PM
               </p>
             </div>
           </div>

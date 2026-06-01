@@ -27,8 +27,9 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <header className="relative overflow-hidden bg-midnight-moss pt-20">
-        {/* Real job-photo background with a dark overlay so the headline stays bold and readable */}
+      <header className="relative overflow-hidden bg-gradient-to-br from-deep-forest via-midnight-moss to-midnight-moss pt-20">
+        {/* Real job-photo background with a dark overlay so the headline stays bold and readable.
+            If the image is missing, the green gradient above still looks intentional. */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-background-lawn-care-louisiana.webp"
@@ -38,8 +39,8 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-midnight-moss/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-midnight-moss/85 via-midnight-moss/55 to-transparent" />
+          <div className="absolute inset-0 bg-midnight-moss/65" />
+          <div className="absolute inset-0 bg-gradient-to-r from-midnight-moss/85 via-midnight-moss/45 to-transparent" />
         </div>
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(#94e1aa 1.5px, transparent 1.5px)', backgroundSize: '26px 26px' }} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:py-20 lg:px-8">

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
 export const runtime = 'nodejs';
 
@@ -12,16 +12,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Name and phone are required.' }, { status: 400 });
     }
 
-    const apiKey = process.env.SENDGRID_API_KEY;
+    const apiKey = process.env.RESEND_API_KEY;
     const to = process.env.LEAD_TO_EMAIL;
     const from = process.env.LEAD_FROM_EMAIL;
 
     if (!apiKey || !to || !from) {
-      console.error('Missing SendGrid env vars. Lead was not emailed:', data);
+      console.error('Missing Resend env vars. Lead was not emailed:', data);
       return NextResponse.json({ error: 'Email is not configured yet.' }, { status: 500 });
     }
 
-    sgMail.setApiKey(apiKey);
+    const resend = new Resend(apiKey);
 
     const rows = [
       ['Type', type],
@@ -50,14 +50,19 @@ export async function POST(req: NextRequest) {
       </table>
     `;
 
-    await sgMail.send({
-      to,
+    const { error } = await resend.emails.send({
       from,
+      to,
       replyTo: email || undefined,
       subject: `New ${type} from ${name}`,
       text: textBody,
       html: htmlBody,
     });
+
+    if (error) {
+      console.error('Resend send error:', error);
+      return NextResponse.json({ error: 'Failed to send.' }, { status: 500 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {

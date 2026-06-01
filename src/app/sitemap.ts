@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SERVICES } from '@/data/services';
 import { LOCATIONS } from '@/data/locations';
+import { ZIPPER_COMBOS } from '@/data/zipper';
 import { SITE } from '@/data/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -24,5 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }));
-  return [...staticPages, ...servicePages, ...locationPages];
+  const zipperPages = ZIPPER_COMBOS.map((z) => ({
+    url: `${base}/${z.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+  return [...staticPages, ...servicePages, ...locationPages, ...zipperPages];
 }

@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SITE } from '@/data/site';
+import { GOOGLE_RATING, REVIEWS } from '@/data/reviews';
 
 const anton = Anton({
   weight: '400',
@@ -61,20 +62,50 @@ const businessJsonLd = {
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: SITE.street,
     addressLocality: SITE.city,
     addressRegion: SITE.region,
     postalCode: SITE.postalCode,
     addressCountry: 'US',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE.geo.lat,
+    longitude: SITE.geo.lng,
+  },
+  hasMap: SITE.social.google,
   areaServed: SITE.serviceAreas.map((a) => ({ '@type': 'City', name: a })),
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:00',
+      opens: '06:00',
+      closes: '18:30',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '06:00',
       closes: '18:00',
     },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '07:00',
+      closes: '16:00',
+    },
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: GOOGLE_RATING.score,
+    reviewCount: GOOGLE_RATING.count,
+  },
+  review: REVIEWS.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.author },
+    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+    reviewBody: r.text,
+  })),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

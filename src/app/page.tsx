@@ -5,7 +5,9 @@ import {
 } from 'lucide-react';
 import { SITE, AREA_NAV } from '@/data/site';
 import { SERVICES } from '@/data/services';
+import { REVIEWS } from '@/data/reviews';
 import ServiceAreaMap from '@/components/ServiceAreaMap';
+import ReviewBadgeBar from '@/components/ReviewBadgeBar';
 
 const serviceIcons: Record<string, React.ReactNode> = {
   'lawn-mowing': <Scissors className="h-6 w-6" />,
@@ -26,6 +28,19 @@ export default function Home() {
     <>
       {/* HERO */}
       <header className="relative overflow-hidden bg-midnight-moss pt-20">
+        {/* Real job-photo background with a dark overlay so the headline stays bold and readable */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-background-lawn-care-louisiana.webp"
+            alt="Fresh mulch bed, stone border, and healthy green lawn by Southern Buck Lawn in Denham Springs, Louisiana"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-midnight-moss/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-midnight-moss/85 via-midnight-moss/55 to-transparent" />
+        </div>
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(#94e1aa 1.5px, transparent 1.5px)', backgroundSize: '26px 26px' }} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:py-20 lg:px-8">
           <div className="space-y-6 lg:col-span-7">
@@ -224,27 +239,32 @@ export default function Home() {
 
       {/* REVIEWS / SOCIAL PROOF */}
       <section className="bg-surface py-20">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mb-3 flex justify-center gap-1 text-safety-orange">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-6 w-6 fill-safety-orange" />
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <p className="mb-3 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">What folks say</p>
+            <h2 className="font-anton text-4xl uppercase tracking-wide text-primary sm:text-5xl">We Earn It One Yard at a Time</h2>
+            <div className="mx-auto mt-4 h-1 w-24 rounded bg-safety-orange" />
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {REVIEWS.map((r) => (
+              <figure key={r.author} className="flex flex-col rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
+                <div className="mb-3 flex gap-0.5 text-safety-orange">
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-safety-orange" />
+                  ))}
+                </div>
+                <blockquote className="grow font-barlow text-lg leading-relaxed text-gray-700">&ldquo;{r.text}&rdquo;</blockquote>
+                <figcaption className="mt-4 flex items-center justify-between border-t border-primary/10 pt-3">
+                  <span className="font-anton text-base uppercase text-midnight-moss">{r.author}</span>
+                  <span className="font-barlow text-sm uppercase tracking-wider text-gray-400">{r.source}</span>
+                </figcaption>
+              </figure>
             ))}
           </div>
-          <h2 className="font-anton text-4xl uppercase tracking-wide text-primary sm:text-5xl">We Earn It One Yard at a Time</h2>
-          <p className="mx-auto mt-4 max-w-2xl font-barlow text-lg text-gray-600">
-            Worked with us? Leave us a review and help your neighbors find a crew they can trust. Looking to hire? Read what folks around Walker and Denham Springs have to say.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
-            <a href={SITE.social.google} className="rounded-lg border border-primary/10 bg-white px-6 py-3 font-anton uppercase tracking-wide text-midnight-moss shadow-sm transition-all hover:border-safety-orange">
-              Review us on Google
-            </a>
-            <a href={SITE.social.facebook} className="flex items-center gap-2 rounded-lg border border-primary/10 bg-white px-6 py-3 shadow-sm transition-all hover:border-safety-orange">
-              <Image src="/images/yelp-reviews.png" alt="Southern Buck Lawn on Yelp" width={70} height={36} className="h-9 w-auto" />
-            </a>
-            <a href={SITE.social.nextdoor} className="flex items-center gap-2 rounded-lg border border-primary/10 bg-white px-6 py-3 shadow-sm transition-all hover:border-safety-orange">
-              <Image src="/images/nextdoor.png" alt="Southern Buck Lawn on Nextdoor" width={36} height={36} className="h-9 w-auto" />
-              <span className="font-anton uppercase tracking-wide text-midnight-moss">Nextdoor</span>
-            </a>
+
+          <div className="mt-12">
+            <ReviewBadgeBar />
           </div>
         </div>
       </section>

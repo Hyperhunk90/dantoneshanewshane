@@ -1,30 +1,35 @@
-// Central business info. Update the two TODO values before launch.
+// Central business info for Southern Buck Lawn.
 export const SITE = {
   name: 'Southern Buck Lawn',
   owner: 'Michael Dantone',
   tagline: 'Southern Care. The Landscape Mayor.',
-  // TODO: replace with the real business phone number before go-live.
-  phone: '(225) 555-0123',
-  phoneHref: 'tel:+12255550123',
+  phone: '(225) 369-4434',
+  phoneHref: 'tel:+12253694434',
   email: 'SBL@Southernbucklawn.com',
   emailHref: 'mailto:SBL@Southernbucklawn.com',
+  street: '28790 Brett Dr',
   city: 'Walker',
   region: 'LA',
   regionFull: 'Louisiana',
   postalCode: '70785',
+  // Geo coordinates for 28790 Brett Dr, Walker, LA (used in schema + map).
+  geo: { lat: 30.4849, lng: -90.8662 },
   url: 'https://southernbucklawn.com',
+  // Real hours from the Google Business Profile.
   hours: [
-    { days: 'Monday – Friday', time: '7:00 AM – 6:00 PM' },
-    { days: 'Saturday', time: 'By appointment' },
-    { days: 'Sunday', time: 'Closed' },
+    { days: 'Monday – Friday', time: '6:00 AM – 6:30 PM' },
+    { days: 'Saturday', time: '6:00 AM – 6:00 PM' },
+    { days: 'Sunday', time: '7:00 AM – 4:00 PM' },
   ],
-  serviceAreas: ['Walker', 'Denham Springs', 'Baton Rouge', 'Livingston Parish'],
-  // Drop your real profile URLs in once they exist.
+  // Primary GBP category.
+  primaryCategory: 'Lawn care service',
+  serviceAreas: ['Walker', 'Denham Springs', 'Baton Rouge', 'Gonzales', 'Livingston Parish'],
   social: {
-    google: '#',
-    facebook: '#',
-    yelp: '#',
+    google: 'https://share.google/KjUM9ViEKjTK29ETk',
+    facebook: 'https://facebook.com/SouthernBuckLawn',
+    yelp: 'https://www.yelp.com/biz/southern-buck-lawn-walker',
     nextdoor: '#',
+    bbb: 'https://www.bbb.org/us/la/walker/profile/lawn-care/southern-buck-lawn-0835-90048199',
   },
 };
 

@@ -121,10 +121,19 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
-        <button onClick={() => setOpen((v) => !v)} className="p-2 text-sage hover:text-white lg:hidden" aria-label="Menu">
-          {open ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
-        </button>
+        {/* Mobile: quick quote button + menu toggle */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link
+            href="/quote"
+            onClick={closeAll}
+            className="rounded-lg bg-safety-orange px-4 py-2 font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss shadow-md active:scale-95"
+          >
+            Get Quote
+          </Link>
+          <button onClick={() => setOpen((v) => !v)} className="p-1 text-sage hover:text-white" aria-label="Menu">
+            {open ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

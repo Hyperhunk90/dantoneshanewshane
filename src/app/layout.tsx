@@ -47,7 +47,6 @@ export const metadata: Metadata = {
     images: [{ url: '/images/hero-lawn-care-denham-springs-louisiana.webp', width: 750, height: 1665 }],
   },
   robots: { index: true, follow: true },
-  icons: { icon: '/images/icon.png' },
 };
 
 const businessJsonLd = {

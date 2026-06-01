@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Check, ArrowRight, PhoneCall, CircleHelp } from 'lucide-react';
 import { SERVICES, getService } from '@/data/services';
+import { ZIPPER_COMBOS } from '@/data/zipper';
 import { AREA_NAV, SITE } from '@/data/site';
 import QuoteForm from '@/components/QuoteForm';
 
@@ -35,6 +36,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) notFound();
 
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug);
+  const cityPages = ZIPPER_COMBOS.filter((z) => z.serviceSlug === service.slug);
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -115,6 +117,23 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 </div>
               ))}
             </div>
+
+            {cityPages.length > 0 && (
+              <>
+                <h2 className="pt-4 font-anton text-2xl uppercase text-primary">{service.title} by Town</h2>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {cityPages.map((z) => (
+                    <Link
+                      key={z.slug}
+                      href={`/${z.slug}`}
+                      className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-base uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange"
+                    >
+                      {z.cityName} <ArrowRight className="h-5 w-5 text-safety-orange" />
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
           {/* Sidebar */}

@@ -170,8 +170,8 @@ export const SERVICES: Service[] = [
           'We do. Common-area mowing, fence lines, entrance beds, and monument flowerbeds, all on one schedule with one invoice and one person to call.',
       },
     ],
-    image: '/images/mulch-flowerbed-install-denham-springs.webp',
-    imageAlt: 'Clean mulched landscape bed and trimmed boxwoods along a brick property by Southern Buck Lawn',
+    image: '/images/commercial-front-entrance-mulch-roses-livingston-la.webp',
+    imageAlt: 'Commercial front entrance with fresh black mulch, roses, and flagpoles maintained by Southern Buck Lawn in Livingston, LA',
   },
 ];
 

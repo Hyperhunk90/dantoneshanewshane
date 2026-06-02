@@ -22,8 +22,8 @@ export const POSTS: BlogPost[] = [
       'lawn pest control Walker LA',
       'why is my grass dying in summer',
     ],
-    heroImage: '/images/weed-control-green-lawn-denham-springs.webp',
-    heroAlt: 'Healthy green St. Augustine lawn free of chinch bug damage in Denham Springs, Louisiana',
+    heroImage: '/images/residential-backyard-lawn-mowing-stripes-louisiana.webp',
+    heroAlt: 'Healthy green Louisiana backyard lawn with mowing stripes, free of chinch bug damage',
     sections: [
       {
         body: [
@@ -132,8 +132,8 @@ export const POSTS: BlogPost[] = [
       'lawn mowing Baton Rouge',
       'why is my grass turning brown after mowing',
     ],
-    heroImage: '/images/lawn-mowing-edging-walker-louisiana.webp',
-    heroAlt: 'Freshly mowed green lawn cut at the correct summer height in Walker, Louisiana',
+    heroImage: '/images/commercial-lawn-mowing-stripes-livingston-la.webp',
+    heroAlt: 'Wide green lawn cut with clean mowing stripes at the correct summer height in Louisiana',
     sections: [
       {
         body: [

@@ -56,8 +56,8 @@ export const LOCATIONS: Location[] = [
     pestNote:
       'Watch for armyworms that can strip a lawn overnight, mole crickets tearing up the root zone, and dollar spot fungus that loves the heavy July dew. We catch them early before they take the whole yard.',
     neighborhoods: ['Antique District', 'Juban Crossing area', 'Range Avenue corridor', 'Magnolia Beach', 'Watson line'],
-    image: '/images/mulch-flowerbed-install-denham-springs.webp',
-    imageAlt: 'Fresh red mulch bed and trimmed boxwoods installed by Southern Buck Lawn in Denham Springs, LA',
+    image: '/images/pine-straw-black-mulch-flower-bed-livingston-la.webp',
+    imageAlt: 'Fresh pine straw and black mulch flower bed with red roses, installed by Southern Buck Lawn near Denham Springs, LA',
     reviews: [],
     faqs: [
       {
@@ -93,8 +93,8 @@ export const LOCATIONS: Location[] = [
     pestNote:
       'Virginia buttonweed is the headache here, tough as nails against most herbicides, along with brown patch fungus during the warm wet stretch of fall. We treat both with the right product and the right timing.',
     neighborhoods: ['Garden District', 'Perkins Road corridor', 'Jefferson Highway', 'Shenandoah', 'Woodlawn'],
-    image: '/images/baton-rouge-louisiana-state-capitol.webp',
-    imageAlt: 'Louisiana State Capitol in Baton Rouge at sunset',
+    image: '/images/commercial-grounds-maintenance-flags-baton-rouge-la.webp',
+    imageAlt: 'Commercial grounds and striped lawn maintained by Southern Buck Lawn at a Baton Rouge, LA property',
     reviews: [],
     faqs: [
       {
@@ -130,7 +130,7 @@ export const LOCATIONS: Location[] = [
     pestNote:
       'Open rural land means fire ants, ticks, and fleas setting up in the warm sandy spots. We keep the turf tight and treated so they have nowhere good to settle in.',
     neighborhoods: ['Watson', 'Albany', 'Satsuma', 'French Settlement', 'Maurepas'],
-    image: '/images/lawn-mowing-edging-walker-louisiana.webp',
+    image: '/images/residential-lawn-mowing-acreage-livingston-parish-la.webp',
     imageAlt: 'Neatly mowed green lawn with a clean edge, typical Southern Buck Lawn acreage work in Livingston Parish',
     reviews: [],
     faqs: [

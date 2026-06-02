@@ -3,16 +3,19 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Check, ArrowRight, PhoneCall, MapPin } from 'lucide-react';
-import { ZIPPER_COMBOS, getZipper } from '@/data/zipper';
+import { ZIPPER_COMBOS, getZipper, getZipperFaqs } from '@/data/zipper';
 import { getService } from '@/data/services';
 import { getLocation } from '@/data/locations';
 import { SITE } from '@/data/site';
 import QuoteForm from '@/components/QuoteForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import FaqSection from '@/components/FaqSection';
 
 export function generateStaticParams() {
   return ZIPPER_COMBOS.map((z) => ({ zipper: z.slug }));
 }
 
+// Only the known zipper slugs render here; anything else 404s.
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ zipper: string }> }): Promise<Metadata> {
@@ -41,15 +44,19 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
   const location = getLocation(combo.citySlug);
   if (!service || !location) notFound();
 
+  // Sibling zipper pages for internal linking: same service in other cities.
   const otherCities = ZIPPER_COMBOS.filter(
     (z) => z.serviceSlug === combo.serviceSlug && z.slug !== combo.slug,
   );
+  const faqs = getZipperFaqs(combo);
 
   return (
     <>
+      {/* Hero */}
       <header className="relative overflow-hidden bg-midnight-moss pt-28 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="space-y-5">
+            <Breadcrumbs trail={[{ name: combo.serviceTitle, href: `/services/${combo.serviceSlug}` }, { name: `${combo.serviceTitle} in ${combo.cityName}`, href: `/${combo.slug}` }]} />
             <p className="inline-flex items-center gap-2 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">
               <MapPin className="h-4 w-4" /> {combo.cityName}, LA
             </p>
@@ -70,6 +77,7 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
         </div>
       </header>
 
+      {/* Body */}
       <section className="bg-surface py-16">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
           <div className="space-y-6 lg:col-span-2">
@@ -86,10 +94,12 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
               ))}
             </ul>
 
+            {/* Local context pulled from the city silo */}
             <h2 className="pt-4 font-anton text-2xl uppercase text-primary">Built for {combo.cityName} Yards</h2>
             <p className="font-barlow text-lg leading-relaxed text-gray-700">{location.soilNote}</p>
             <p className="font-barlow text-lg leading-relaxed text-gray-700">{location.pestNote}</p>
 
+            {/* Internal links: service hub + city page */}
             <div className="rounded-xl border border-primary/10 bg-mist-green p-5">
               <p className="font-barlow text-lg text-gray-700">
                 Learn more about our{' '}
@@ -104,6 +114,7 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
               </p>
             </div>
 
+            {/* Same service, other towns */}
             <h2 className="pt-4 font-anton text-2xl uppercase text-primary">{combo.serviceTitle} Nearby</h2>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {otherCities.map((z) => (
@@ -116,8 +127,13 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
                 </Link>
               ))}
             </div>
+
+            <div className="pt-2">
+              <FaqSection faqs={faqs} heading={`${combo.serviceTitle} in ${combo.cityName} FAQs`} />
+            </div>
           </div>
 
+          {/* Sidebar */}
           <aside className="space-y-6 lg:col-span-1">
             <div className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
               <p className="font-barlow text-sm font-bold uppercase tracking-wider text-safety-orange">Typical pricing</p>
@@ -140,6 +156,7 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
         </div>
       </section>
 
+      {/* Quote */}
       <section className="bg-mist-green py-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">

@@ -278,4 +278,47 @@ export function getZipper(slug: string) {
   return ZIPPER_COMBOS.find((z) => z.slug === slug);
 }
 
+// Builds page-specific FAQs for a zipper combo from its service and city.
+// Each combo gets questions tied to the exact service and town, not boilerplate.
+import { FAQ } from '@/lib/types';
+
+const SERVICE_FAQ_BITS: Record<string, { cost: string; how: string }> = {
+  'lawn-mowing': {
+    cost: 'Weekly mowing runs about $45 to $85 a visit, set by lot size. We give you a firm number after a quick look, free.',
+    how: 'Every visit you get a mow, string trimming, a hard edge along the drive and walks, then a full blow-off of every clipping.',
+  },
+  'weed-control': {
+    cost: 'Most weed-and-feed rounds run $65 to $110 per application, and we recommend about six rounds a year. The estimate is free.',
+    how: 'We pair slow-release granular fertilizer with targeted sprays and time a late-winter pre-emergent to stop crabgrass before it sprouts.',
+  },
+  'landscape-design': {
+    cost: 'Bed and mulch projects start around $450 and scale with bed size and plant choices. We quote it after a walk-through, free.',
+    how: 'We cut clean bed lines, lay deep mulch over weed barrier, set stone or block borders, and plant heat-tough choices for South Louisiana.',
+  },
+  'commercial-grounds': {
+    cost: 'Commercial contracts are custom, and most start around $250 a month depending on the property. The estimate is always free.',
+    how: 'We work around your business hours with one point of contact, a set schedule, clean digital invoices, and full insurance on file.',
+  },
+};
+
+export function getZipperFaqs(combo: ZipperCombo): FAQ[] {
+  const bits = SERVICE_FAQ_BITS[combo.serviceSlug];
+  const city = combo.cityName;
+  const svc = combo.serviceTitle.toLowerCase();
+  return [
+    {
+      question: `How much does ${svc} cost in ${city}?`,
+      answer: bits.cost,
+    },
+    {
+      question: `What is included with ${svc} in ${city}?`,
+      answer: bits.how,
+    },
+    {
+      question: `Are you local to ${city}?`,
+      answer: `Yes. Southern Buck Lawn is based in Walker and serves ${city} every week. You get the same crew on a set day, licensed and insured, with a callback inside 24 hours.`,
+    },
+  ];
+}
+
 export { CITY_SHORT };

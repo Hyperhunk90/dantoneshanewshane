@@ -18,7 +18,7 @@ const serviceIcons: Record<string, React.ReactNode> = {
 
 const gallery = [
   { src: '/images/black-mulch-install-before-after.webp', alt: 'Before and after black mulch install on a Louisiana front bed by Southern Buck Lawn', w: 1344, h: 768 },
-  { src: '/images/landscape-design-before-after-denham-springs.webp', alt: 'Before and after flowerbed transformation in Denham Springs', w: 900, h: 563 },
+  { src: '/images/flower-bed-mulch-transformation-before-after-louisiana.webp', alt: 'Three-stage flower bed transformation with black mulch and stone border by Southern Buck Lawn in Louisiana', w: 900, h: 1600 },
   { src: '/images/mulch-install-side-yard-denham-springs.webp', alt: 'Fresh red mulch and boxwoods along a Denham Springs home', w: 800, h: 1776 },
   { src: '/images/hedge-trimming-bed-cleanup-baton-rouge.webp', alt: 'Overgrown bed before a Baton Rouge hedge trimming and cleanup', w: 800, h: 1422 },
 ];
@@ -123,10 +123,10 @@ export default function Home() {
           <div className="relative lg:col-span-5">
             <div className="-rotate-1 overflow-hidden rounded-2xl border border-primary/10 bg-white p-3 shadow-xl">
               <Image
-                src="/images/mulch-flowerbed-install-denham-springs.webp"
-                alt="Boxwood hedge and fresh mulch bed installed by Southern Buck Lawn in Denham Springs"
-                width={800}
-                height={1776}
+                src="/images/commercial-grounds-night-entrance-livingston-la.webp"
+                alt="Commercial building entrance with fresh landscaping and lawn lit up at night, by Southern Buck Lawn in Livingston, LA"
+                width={900}
+                height={1600}
                 className="h-[460px] w-full rounded-xl object-cover"
               />
             </div>

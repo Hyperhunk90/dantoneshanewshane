@@ -5,13 +5,15 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TextBubble from '@/components/TextBubble';
 import { SITE } from '@/data/site';
-import { GOOGLE_RATING, REVIEWS } from '@/data/reviews';
 
 const anton = Anton({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-anton-src',
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ['Arial Narrow', 'Arial', 'sans-serif'],
 });
 
 const barlow = Barlow_Condensed({
@@ -19,6 +21,9 @@ const barlow = Barlow_Condensed({
   subsets: ['latin'],
   variable: '--font-barlow-src',
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ['Arial', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
@@ -95,20 +100,6 @@ const businessJsonLd = {
       closes: '16:00',
     },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: GOOGLE_RATING.score,
-    reviewCount: GOOGLE_RATING.count,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: REVIEWS.map((r) => ({
-    '@type': 'Review',
-    itemReviewed: { '@type': 'LocalBusiness', name: SITE.name, '@id': SITE.url },
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-    reviewBody: r.text,
-  })),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

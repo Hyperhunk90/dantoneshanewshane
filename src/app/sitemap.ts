@@ -2,12 +2,13 @@ import type { MetadataRoute } from 'next';
 import { SERVICES } from '@/data/services';
 import { LOCATIONS } from '@/data/locations';
 import { ZIPPER_COMBOS } from '@/data/zipper';
+import { POSTS } from '@/data/blog';
 import { SITE } from '@/data/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
   const now = new Date();
-  const staticPages = ['', '/services', '/quote', '/contact'].map((p) => ({
+  const staticPages = ['', '/services', '/blog', '/quote', '/contact'].map((p) => ({
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
@@ -31,5 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }));
-  return [...staticPages, ...servicePages, ...locationPages, ...zipperPages];
+  const blogPages = POSTS.map((p) => ({
+    url: `${base}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+  return [...staticPages, ...servicePages, ...locationPages, ...zipperPages, ...blogPages];
 }

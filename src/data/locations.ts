@@ -22,6 +22,23 @@ export const LOCATIONS: Location[] = [
     image: '/images/welcome-to-walker-louisiana-sign.webp',
     imageAlt: 'Welcome to the City of Walker, Louisiana road sign',
     reviews: [],
+    faqs: [
+      {
+        question: 'How much does lawn care cost in Walker, LA?',
+        answer:
+          'Most weekly mowing in Walker runs $45 to $85 a visit, set by lot size. Bed work, mulch, and landscaping are quoted after a quick look. The estimate is always free and we call you back within 24 hours.',
+      },
+      {
+        question: 'Do you treat chinch bugs on new Walker sod?',
+        answer:
+          'Yes. Chinch bugs are the big problem on young Centipede sod here, and they leave dry brown patches that look like drought. We spot them early and treat before they spread across the yard.',
+      },
+      {
+        question: 'How often should I mow my lawn in Walker through the summer?',
+        answer:
+          'April through October the warm-season grass runs hard, so weekly keeps it healthy and clean. We ease to every other week in early spring and late fall once growth slows.',
+      },
+    ],
   },
   {
     slug: 'denham-springs',
@@ -42,6 +59,23 @@ export const LOCATIONS: Location[] = [
     image: '/images/mulch-flowerbed-install-denham-springs.webp',
     imageAlt: 'Fresh red mulch bed and trimmed boxwoods installed by Southern Buck Lawn in Denham Springs, LA',
     reviews: [],
+    faqs: [
+      {
+        question: 'How much does lawn care cost in Denham Springs?',
+        answer:
+          'Weekly mowing in Denham Springs typically runs $45 to $85 per visit depending on lot size, with mulch and landscaping quoted after a walk-through. Every estimate is free with a 24-hour callback.',
+      },
+      {
+        question: 'My yard holds water after a storm. Can you help?',
+        answer:
+          'Yes. The heavy clay around Denham Springs packs tight and holds water, which starves roots of air. We aerate and feed on a schedule so your grass roots can breathe and drink the way they should.',
+      },
+      {
+        question: 'What lawn pests are worst in Denham Springs?',
+        answer:
+          'Armyworms can strip a lawn overnight, mole crickets tear up the root zone, and dollar spot fungus loves the heavy July dew. We watch for all three and treat early before they take the whole yard.',
+      },
+    ],
   },
   {
     slug: 'baton-rouge',
@@ -62,6 +96,23 @@ export const LOCATIONS: Location[] = [
     image: '/images/baton-rouge-louisiana-state-capitol.webp',
     imageAlt: 'Louisiana State Capitol in Baton Rouge at sunset',
     reviews: [],
+    faqs: [
+      {
+        question: 'Do you handle both homes and commercial properties in Baton Rouge?',
+        answer:
+          'Yes. We serve custom homes from the Garden District to Perkins and Jefferson, plus commercial grounds for HOAs, offices, and retail. Same crew, same standard on every visit.',
+      },
+      {
+        question: 'How do you get rid of Virginia buttonweed in Baton Rouge lawns?',
+        answer:
+          'Virginia buttonweed shrugs off most store-bought sprays, so timing and the right product matter. We treat it on a schedule and lime the acidic soil so your grass grows thick enough to fight back.',
+      },
+      {
+        question: 'Why does my Baton Rouge lawn look pale even after feeding?',
+        answer:
+          'Baton Rouge soil leans acidic, which locks up nutrients already in the ground. We lime on a schedule to unlock them, which is how a tired pale lawn turns a deep, even green.',
+      },
+    ],
   },
   {
     slug: 'livingston-parish',
@@ -82,6 +133,23 @@ export const LOCATIONS: Location[] = [
     image: '/images/lawn-mowing-edging-walker-louisiana.webp',
     imageAlt: 'Neatly mowed green lawn with a clean edge, typical Southern Buck Lawn acreage work in Livingston Parish',
     reviews: [],
+    faqs: [
+      {
+        question: 'Do you mow large lots and acreage in Livingston Parish?',
+        answer:
+          'Yes. We bring commercial zero-turns to Watson, Albany, Satsuma, and the rest, so an acre or more gets knocked out fast and still looks sharp when we leave.',
+      },
+      {
+        question: 'Can you clear overgrown or brushy areas on a rural property?',
+        answer:
+          'We can. The forested silt loam out here grows fast and rough, so we keep borders tight with strong trimming and a solid weed barrier in the beds to stay ahead of the wild growth.',
+      },
+      {
+        question: 'How do you keep fire ants and fleas down on open land?',
+        answer:
+          'Open rural ground gives fire ants, ticks, and fleas warm sandy spots to settle in. We keep the turf tight and treated so they have nowhere good to set up.',
+      },
+    ],
   },
 ];
 

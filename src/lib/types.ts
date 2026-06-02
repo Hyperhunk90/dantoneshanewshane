@@ -44,4 +44,28 @@ export interface Location {
   image: string;
   imageAlt: string;
   reviews: Review[];
+  faqs: FAQ[];
+}
+
+export interface BlogSection {
+  heading?: string;
+  body: string[];
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  h1: string;
+  excerpt: string;
+  date: string; // ISO, e.g. '2026-06-01'
+  dateLabel: string; // human, e.g. 'June 1, 2026'
+  readMinutes: number;
+  keywords: string[];
+  heroImage: string;
+  heroAlt: string;
+  sections: BlogSection[];
+  // Internal links to service or area pages this post should funnel to.
+  relatedLinks: { label: string; href: string }[];
 }

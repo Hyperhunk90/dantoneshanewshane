@@ -7,6 +7,7 @@ import { SERVICES, getService } from '@/data/services';
 import { ZIPPER_COMBOS } from '@/data/zipper';
 import { AREA_NAV, SITE } from '@/data/site';
 import QuoteForm from '@/components/QuoteForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -56,6 +57,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <header className="relative overflow-hidden bg-midnight-moss pt-28 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="space-y-5">
+            <Breadcrumbs trail={[{ name: 'Services', href: '/services' }, { name: service.title, href: `/services/${service.slug}` }]} />
             <p className="font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">{service.subtitle}</p>
             <h1 className="font-anton text-4xl uppercase leading-tight tracking-wide sm:text-5xl">{service.h1}</h1>
             <p className="font-barlow text-xl text-white/80">{service.quickSummary}</p>

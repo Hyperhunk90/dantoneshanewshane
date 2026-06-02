@@ -35,7 +35,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-5 font-anton text-xl uppercase tracking-wider text-safety-orange">Services</h4>
+            <h3 className="mb-5 font-anton text-xl uppercase tracking-wider text-safety-orange">Services</h3>
             <ul className="space-y-3">
               {SERVICE_NAV.map((s) => (
                 <li key={s.href}>
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Areas */}
           <div>
-            <h4 className="mb-5 font-anton text-xl uppercase tracking-wider text-safety-orange">Service Areas</h4>
+            <h3 className="mb-5 font-anton text-xl uppercase tracking-wider text-safety-orange">Service Areas</h3>
             <ul className="space-y-3">
               {AREA_NAV.map((a) => (
                 <li key={a.href}>

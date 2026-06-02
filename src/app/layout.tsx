@@ -99,11 +99,14 @@ const businessJsonLd = {
     '@type': 'AggregateRating',
     ratingValue: GOOGLE_RATING.score,
     reviewCount: GOOGLE_RATING.count,
+    bestRating: 5,
+    worstRating: 1,
   },
   review: REVIEWS.map((r) => ({
     '@type': 'Review',
+    itemReviewed: { '@type': 'LocalBusiness', name: SITE.name, '@id': SITE.url },
     author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5 },
+    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
     reviewBody: r.text,
   })),
 };

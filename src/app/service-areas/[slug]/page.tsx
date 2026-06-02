@@ -7,6 +7,8 @@ import { LOCATIONS, getLocation } from '@/data/locations';
 import { SERVICE_NAV, SITE } from '@/data/site';
 import ServiceAreaMap from '@/components/ServiceAreaMap';
 import QuoteForm from '@/components/QuoteForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import FaqSection from '@/components/FaqSection';
 
 export function generateStaticParams() {
   return LOCATIONS.map((l) => ({ slug: l.slug }));
@@ -41,6 +43,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       <header className="relative overflow-hidden bg-midnight-moss pt-28 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="space-y-5">
+            <Breadcrumbs trail={[{ name: 'Service Areas', href: '/services' }, { name: loc.name, href: `/service-areas/${loc.slug}` }]} />
             <p className="inline-flex items-center gap-2 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">
               <MapPin className="h-4 w-4" /> {loc.name}
             </p>
@@ -101,6 +104,10 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                 {s.label} <ArrowRight className="h-5 w-5 text-safety-orange" />
               </Link>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <FaqSection faqs={loc.faqs} heading={`${loc.name.replace(', LA', '')} Lawn Care Questions`} />
           </div>
         </div>
       </section>

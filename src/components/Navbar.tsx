@@ -109,6 +109,9 @@ export default function Navbar() {
           <Link href="/#about" className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
             About
           </Link>
+          <Link href="/blog" className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
+            Blog
+          </Link>
           <a href={SITE.phoneHref} className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
             {SITE.phone}
           </a>
@@ -158,6 +161,11 @@ export default function Navbar() {
                   {a.label}
                 </Link>
               ))}
+            </div>
+            <div className="border-t border-primary/20 pt-2">
+              <Link href="/blog" onClick={closeAll} className="block rounded px-3 py-2 font-barlow text-lg font-bold text-white hover:bg-primary/20">
+                Blog
+              </Link>
             </div>
             <div className="border-t border-primary/20 pt-3">
               <Link href="/quote" onClick={closeAll} className="block rounded-lg bg-safety-orange py-3 text-center font-barlow text-lg font-bold text-midnight-moss shadow-lg">

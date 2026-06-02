@@ -68,7 +68,11 @@ export default function Footer() {
           <p className="font-barlow text-sm tracking-wider text-white/50">
             &copy; {new Date().getFullYear()} Southern Buck Lawn. All rights reserved. Walker, Louisiana.
           </p>
-          <p className="font-barlow text-sm tracking-wider text-white/50">Licensed &amp; insured lawn and landscape services.</p>
+          <div className="flex items-center gap-5 font-barlow text-sm tracking-wider text-white/60">
+            <Link href="/blog" className="hover:text-safety-orange">Blog</Link>
+            <Link href="/quote" className="hover:text-safety-orange">Free Quote</Link>
+            <Link href="/contact" className="hover:text-safety-orange">Contact</Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight, PhoneCall } from 'lucide-react';
 import { SERVICES } from '@/data/services';
 import { SITE } from '@/data/site';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Lawn Care & Landscaping Services in Walker & Baton Rouge',
@@ -16,6 +17,9 @@ export default function ServicesIndex() {
   return (
     <>
       <header className="bg-midnight-moss px-4 pb-16 pt-32 text-center text-white sm:px-6 lg:px-8">
+        <div className="mx-auto mb-5 flex max-w-3xl justify-center">
+          <Breadcrumbs trail={[{ name: 'Services', href: '/services' }]} />
+        </div>
         <p className="mb-3 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">Everything we do</p>
         <h1 className="mx-auto max-w-3xl font-anton text-4xl uppercase leading-tight tracking-wide sm:text-5xl">
           Lawn Care and Landscaping Services in Walker, Louisiana

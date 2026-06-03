@@ -45,6 +45,12 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/landscape-lighting" className="flex items-center gap-1 font-barlow text-white/70 hover:text-safety-orange">
+                  <ChevronRight className="h-4 w-4 text-sage" />
+                  Landscape Lighting
+                </Link>
+              </li>
             </ul>
           </div>
 

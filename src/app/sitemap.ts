@@ -8,7 +8,7 @@ import { SITE } from '@/data/site';
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
   const now = new Date();
-  const staticPages = ['', '/services', '/blog', '/quote', '/contact'].map((p) => ({
+  const staticPages = ['', '/services', '/blog', '/landscape-lighting', '/quote', '/contact'].map((p) => ({
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,

@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import { Anton, Barlow_Condensed } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import TextBubble from '@/components/TextBubble';
+import SiteChrome from '@/components/SiteChrome';
 import { SITE } from '@/data/site';
 
 const anton = Anton({
@@ -110,10 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
         />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <TextBubble />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

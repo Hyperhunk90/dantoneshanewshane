@@ -3,6 +3,7 @@ import { Anton, Barlow_Condensed } from 'next/font/google';
 import './globals.css';
 import SiteChrome from '@/components/SiteChrome';
 import { SITE } from '@/data/site';
+import Script from "next/script";
 
 const anton = Anton({
   weight: '400',
@@ -109,6 +110,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
         />
         <SiteChrome>{children}</SiteChrome>
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-HYJ6QH6Y1D"
+  strategy="afterInteractive"
+/>
+<Script id="ga-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HYJ6QH6Y1D');
+  `}
+</Script>
       </body>
     </html>
   );

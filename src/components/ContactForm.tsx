@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { trackEvent } from '@/lib/ga';
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
@@ -20,6 +21,7 @@ export default function ContactForm() {
       });
       if (!res.ok) throw new Error('failed');
       setStatus('sent');
+      trackEvent('generate_lead', { form: 'contact' });
     } catch {
       setStatus('error');
     }

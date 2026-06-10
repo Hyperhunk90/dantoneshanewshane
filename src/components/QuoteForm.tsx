@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { trackEvent } from '@/lib/ga';
 
 const SERVICES = [
   'Weekly Lawn Mowing & Edging',
@@ -47,6 +48,7 @@ export default function QuoteForm() {
       });
       if (!res.ok) throw new Error('failed');
       setStatus('sent');
+      trackEvent('generate_lead', { form: 'quote', service: form.service });
     } catch {
       setStatus('error');
     }

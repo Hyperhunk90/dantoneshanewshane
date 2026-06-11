@@ -37,6 +37,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
+            quality={50}
             className="object-cover"
           />
           <div className="absolute inset-0 bg-midnight-moss/65" />
@@ -88,6 +89,8 @@ export default function Home() {
                 width={750}
                 height={1665}
                 priority
+                sizes="(max-width: 640px) 92vw, 384px"
+                quality={50}
                 className="h-[520px] w-full rounded-xl object-cover"
               />
               <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-safety-orange px-4 py-1 font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss shadow-lg">
@@ -128,6 +131,8 @@ export default function Home() {
                 alt="Commercial building entrance with fresh landscaping and lawn lit up at night, by Southern Buck Lawn in Livingston, LA"
                 width={900}
                 height={1600}
+                sizes="(max-width: 1024px) 92vw, 480px"
+                quality={50}
                 className="h-[460px] w-full rounded-xl object-cover"
               />
             </div>
@@ -175,6 +180,8 @@ export default function Home() {
                     alt={s.imageAlt}
                     width={400}
                     height={300}
+                    sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 300px"
+                    quality={50}
                     className="h-full w-full object-cover opacity-85 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
                   />
                 </div>
@@ -206,7 +213,7 @@ export default function Home() {
           <div className="grid gap-6 sm:grid-cols-2">
             {gallery.map((g) => (
               <div key={g.src} className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm">
-                <Image src={g.src} alt={g.alt} width={g.w} height={g.h} className="h-72 w-full object-cover" />
+                <Image src={g.src} alt={g.alt} width={g.w} height={g.h} sizes="(max-width: 640px) 92vw, 46vw" quality={50} className="h-72 w-full object-cover" />
               </div>
             ))}
           </div>

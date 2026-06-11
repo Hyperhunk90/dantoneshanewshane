@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Hero image */}
       <div className="bg-midnight-moss px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-2xl">
-          <Image src={post.heroImage} alt={post.heroAlt} width={1200} height={700} className="h-auto w-full object-cover" priority />
+          <Image src={post.heroImage} alt={post.heroAlt} width={1200} height={700} sizes="(max-width: 896px) 100vw, 896px" quality={60} className="h-auto w-full object-cover" priority />
         </div>
       </div>
 

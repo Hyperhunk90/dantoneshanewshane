@@ -2,6 +2,13 @@
   "name": "southern-buck-lawn",
   "version": "1.0.0",
   "private": true,
+  "browserslist": [
+    "chrome 109",
+    "edge 109",
+    "firefox 109",
+    "safari 15.4",
+    "ios_saf 15.4"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

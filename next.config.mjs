@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
+    // Quality values the optimizer may serve; photos of turf/mulch compress
+    // poorly at the default 75, so big atmospheric shots use 50-60.
+    qualities: [50, 60, 75],
   },
   async redirects() {
     return [

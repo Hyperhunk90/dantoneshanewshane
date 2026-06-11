@@ -113,9 +113,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <SiteChrome>{children}</SiteChrome>
         <GaTracker />
+        {/* lazyOnload keeps gtag.js off the critical path; lib/ga.ts queues any
+            events fired before it arrives, so nothing is lost. */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HYJ6QH6Y1D"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

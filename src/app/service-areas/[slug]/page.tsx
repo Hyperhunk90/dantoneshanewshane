@@ -59,7 +59,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
           <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-            <Image src={loc.image} alt={loc.imageAlt} width={800} height={600} className="h-80 w-full object-cover" priority />
+            <Image src={loc.image} alt={loc.imageAlt} width={800} height={600} sizes="(max-width: 1024px) 90vw, 600px" quality={60} className="h-80 w-full object-cover" priority />
           </div>
         </div>
       </header>

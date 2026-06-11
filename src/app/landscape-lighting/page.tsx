@@ -84,6 +84,7 @@ export default function LandscapeLightingPage() {
         </div>
       </header>
 
+      <main>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -139,7 +140,7 @@ export default function LandscapeLightingPage() {
       <section className="bg-[#2f6b34] px-4 py-14 text-white">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center font-anton text-3xl uppercase tracking-wide sm:text-4xl">Our Lighting Services</h2>
-          <p className="mx-auto mt-2 max-w-xl text-center font-barlow text-white/75">
+          <p className="mx-auto mt-2 max-w-xl text-center font-barlow text-white/85">
             One crew, one standard. We design it, install it, and stand behind it.
           </p>
           <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4">
@@ -149,7 +150,7 @@ export default function LandscapeLightingPage() {
                   <s.icon className="h-9 w-9 text-primary" strokeWidth={2} />
                 </div>
                 <h3 className="mt-4 font-anton text-lg uppercase leading-tight text-white">{s.title}</h3>
-                <p className="mt-2 font-barlow text-sm text-white/75">{s.body}</p>
+                <p className="mt-2 font-barlow text-sm text-white/85">{s.body}</p>
               </div>
             ))}
           </div>
@@ -229,6 +230,7 @@ export default function LandscapeLightingPage() {
           </Link>
         </div>
       </section>
+      </main>
 
       {/* FOOTER */}
       <footer className="bg-midnight-moss px-4 py-10 text-white">

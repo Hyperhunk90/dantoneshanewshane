@@ -138,7 +138,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-5 lg:col-span-7">
-            <span className="block font-barlow text-sm font-bold uppercase tracking-[0.2em] text-safety-orange">Local outdoor crew</span>
+            <span className="block font-barlow text-sm font-bold uppercase tracking-[0.2em] text-safety-orange-deep">Local outdoor crew</span>
             <h2 className="font-anton text-4xl uppercase leading-none tracking-wide text-primary sm:text-5xl">Your Hometown Lawn Crew</h2>
             <div className="h-2 w-20 rounded-full bg-safety-orange" />
             <p className="font-barlow text-xl leading-relaxed text-midnight-moss">
@@ -147,7 +147,7 @@ export default function Home() {
             <p className="font-barlow text-lg leading-relaxed text-gray-600">
               We are a tight crew, not a franchise, so when you call, you get me or somebody I trained. We mow, edge, and blow weekly, build flowerbeds, lay mulch, plant crape myrtles, and keep commercial grounds sharp from Walker to Denham Springs to Baton Rouge. Same crew, same day, every week. No runaround, no surprise charges, no gates left open.
             </p>
-            <Link href="/quote" className="inline-flex items-center gap-2 border-b-2 border-primary font-barlow text-lg font-extrabold uppercase text-primary transition-all hover:border-safety-orange hover:text-safety-orange">
+            <Link href="/quote" className="inline-flex items-center gap-2 border-b-2 border-primary font-barlow text-lg font-extrabold uppercase text-primary transition-all hover:border-safety-orange-deep hover:text-safety-orange-deep">
               Schedule a free walk-through <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
@@ -196,7 +196,7 @@ export default function Home() {
       <section id="work" className="bg-surface py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <p className="mb-3 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">Before &amp; after</p>
+            <p className="mb-3 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange-deep">Before &amp; after</p>
             <h2 className="font-anton text-4xl uppercase tracking-wide text-primary sm:text-5xl">Recent Work Around Town</h2>
             <div className="mx-auto mt-4 h-1 w-24 rounded bg-safety-orange" />
             <p className="mx-auto mt-4 max-w-2xl font-barlow text-lg text-gray-600">
@@ -217,7 +217,7 @@ export default function Home() {
       <section className="bg-mist-green py-20">
         <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="space-y-6">
-            <p className="font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">Where we work</p>
+            <p className="font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange-deep">Where we work</p>
             <h2 className="font-anton text-4xl uppercase tracking-wide text-primary sm:text-5xl">We Cover Your Corner of Louisiana</h2>
             <div className="h-1 w-24 rounded bg-safety-orange" />
             <p className="font-barlow text-lg text-gray-600">
@@ -228,7 +228,7 @@ export default function Home() {
                 <Link
                   key={a.href}
                   href={a.href}
-                  className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-lg uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange"
+                  className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-lg uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange-deep"
                 >
                   {a.label} <ArrowRight className="h-5 w-5 text-safety-orange" />
                 </Link>
@@ -243,7 +243,7 @@ export default function Home() {
       <section className="bg-surface py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <p className="mb-3 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">What folks say</p>
+            <p className="mb-3 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange-deep">What folks say</p>
             <h2 className="font-anton text-4xl uppercase tracking-wide text-primary sm:text-5xl">We Earn It One Yard at a Time</h2>
             <div className="mx-auto mt-4 h-1 w-24 rounded bg-safety-orange" />
           </div>
@@ -276,7 +276,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 text-center sm:px-6 lg:flex-row lg:text-left lg:px-8">
           <div>
             <h2 className="font-anton text-3xl uppercase leading-tight text-midnight-moss sm:text-4xl">Ready for the Best Yard on the Street?</h2>
-            <p className="mt-2 font-barlow text-lg text-midnight-moss/80">Free estimate, 24-hour callback, no pressure.</p>
+            <p className="mt-2 font-barlow text-lg text-midnight-moss">Free estimate, 24-hour callback, no pressure.</p>
           </div>
           <Link href="/quote" className="whitespace-nowrap rounded-lg bg-midnight-moss px-8 py-4 font-anton text-lg uppercase tracking-wider text-white shadow-xl transition-transform hover:scale-105">
             Get My Free Quote

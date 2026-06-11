@@ -6,6 +6,8 @@
   --color-deep-forest: #15663a;
   --color-forest-dark: #004c28;
   --color-safety-orange: #f2691f;
+  /* Darkened orange for text on light backgrounds — #f2691f only hits ~2.8:1 there; this passes WCAG AA (>=4.5:1) on surface/mist-green/white. */
+  --color-safety-orange-deep: #b34a0d;
   --color-orange-hot: #fd7127;
   --color-midnight-moss: #15241a;
   --color-mist-green: #f3f6f1;

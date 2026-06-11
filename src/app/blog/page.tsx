@@ -40,14 +40,14 @@ export default function BlogIndex() {
               <Image src={featured.heroImage} alt={featured.heroAlt} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" priority />
             </div>
             <div className="flex flex-col justify-center space-y-3 p-8">
-              <span className="font-barlow text-sm font-bold uppercase tracking-wide text-safety-orange">Latest post</span>
+              <span className="font-barlow text-sm font-bold uppercase tracking-wide text-safety-orange-deep">Latest post</span>
               <h2 className="font-anton text-3xl uppercase leading-tight text-primary">{featured.title}</h2>
               <p className="font-barlow text-lg text-gray-600">{featured.excerpt}</p>
               <div className="flex items-center gap-4 font-barlow text-sm text-gray-500">
                 <span className="flex items-center gap-1"><Calendar className="h-4 w-4" /> {featured.dateLabel}</span>
                 <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> {featured.readMinutes} min read</span>
               </div>
-              <span className="inline-flex items-center gap-2 font-barlow font-extrabold uppercase text-primary transition-all group-hover:gap-3 group-hover:text-safety-orange">
+              <span className="inline-flex items-center gap-2 font-barlow font-extrabold uppercase text-primary transition-all group-hover:gap-3 group-hover:text-safety-orange-deep">
                 Read it <ArrowRight className="h-4 w-4" />
               </span>
             </div>

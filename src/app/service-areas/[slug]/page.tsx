@@ -99,7 +99,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
               <Link
                 key={s.href}
                 href={s.href}
-                className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-lg uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange"
+                className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-lg uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange-deep"
               >
                 {s.label} <ArrowRight className="h-5 w-5 text-safety-orange" />
               </Link>

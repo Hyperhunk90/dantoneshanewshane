@@ -42,10 +42,10 @@ export default function ServicesIndex() {
               </div>
               <div className="space-y-3 p-7 md:col-span-3">
                 <h2 className="font-anton text-2xl uppercase text-primary">{s.title}</h2>
-                <p className="font-barlow text-base font-semibold uppercase tracking-wide text-safety-orange">{s.subtitle}</p>
+                <p className="font-barlow text-base font-semibold uppercase tracking-wide text-safety-orange-deep">{s.subtitle}</p>
                 <p className="font-barlow text-lg text-gray-600">{s.quickSummary}</p>
                 <p className="font-barlow text-base text-gray-500">{s.pricingRange}</p>
-                <span className="inline-flex items-center gap-2 font-barlow font-extrabold uppercase text-primary transition-all group-hover:gap-3 group-hover:text-safety-orange">
+                <span className="inline-flex items-center gap-2 font-barlow font-extrabold uppercase text-primary transition-all group-hover:gap-3 group-hover:text-safety-orange-deep">
                   See the details <ArrowRight className="h-4 w-4" />
                 </span>
               </div>

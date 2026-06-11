@@ -11,7 +11,6 @@ export default function TextBubble() {
   return (
     <a
       href={SMS_HREF}
-      aria-label="Text Southern Buck Lawn for a fast response"
       className="group fixed bottom-5 right-5 z-50 flex items-center gap-0 rounded-full bg-safety-orange py-3 pl-3 pr-3 shadow-2xl ring-4 ring-white/30 transition-all hover:gap-2 hover:pr-5 active:scale-95 sm:bottom-6 sm:right-6"
     >
       <span className="flex h-11 w-11 items-center justify-center rounded-full bg-midnight-moss text-safety-orange">

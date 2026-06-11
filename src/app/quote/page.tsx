@@ -19,7 +19,7 @@ export default function QuotePage() {
           <div className="space-y-8 bg-primary p-9 text-white lg:col-span-2">
             <div>
               <h1 className="font-anton text-4xl uppercase leading-tight">
-                Get a Fast, <span className="text-safety-orange">Free</span> Quote
+                Get a Fast, <span className="text-sage">Free</span> Quote
               </h1>
               <p className="mt-4 font-barlow text-lg text-white/85">
                 Ready to have the best yard on the street? Tell us what you need and we will get back to you within 24 hours with a free estimate. No obligation, no pressure.
@@ -27,10 +27,10 @@ export default function QuotePage() {
             </div>
 
             <div className="space-y-4">
-              <a href={SITE.phoneHref} className="flex items-center gap-3 font-barlow text-lg hover:text-safety-orange">
+              <a href={SITE.phoneHref} className="flex items-center gap-3 font-barlow text-lg hover:text-sage">
                 <PhoneCall className="h-6 w-6 text-safety-orange" /> {SITE.phone}
               </a>
-              <a href={SITE.emailHref} className="flex items-center gap-3 font-barlow text-lg hover:text-safety-orange">
+              <a href={SITE.emailHref} className="flex items-center gap-3 font-barlow text-lg hover:text-sage">
                 <Mail className="h-6 w-6 text-safety-orange" /> {SITE.email}
               </a>
               <p className="flex items-center gap-3 font-barlow text-lg">
@@ -42,7 +42,7 @@ export default function QuotePage() {
             </div>
 
             <div className="border-t border-white/15 pt-6">
-              <p className="font-barlow text-sm uppercase tracking-widest text-safety-orange">Serving</p>
+              <p className="font-barlow text-sm uppercase tracking-widest text-sage">Serving</p>
               <p className="mt-1 font-barlow text-lg text-white/85">Walker &middot; Denham Springs &middot; Baton Rouge &middot; Gonzales &middot; Livingston Parish</p>
             </div>
           </div>

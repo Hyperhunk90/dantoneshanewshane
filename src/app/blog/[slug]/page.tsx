@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <ul className="space-y-2">
               {post.relatedLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="flex items-center gap-2 font-barlow text-base font-semibold text-midnight-moss hover:text-safety-orange">
+                  <Link href={l.href} className="flex items-center gap-2 font-barlow text-base font-semibold text-midnight-moss hover:text-safety-orange-deep">
                     <ArrowRight className="h-4 w-4 text-safety-orange" /> {l.label}
                   </Link>
                 </li>
@@ -131,14 +131,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <Image src={p.heroImage} alt={p.heroAlt} fill className="object-cover" sizes="112px" />
                   </div>
                   <div className="flex flex-col justify-center p-4">
-                    <h3 className="font-anton text-base uppercase leading-tight text-midnight-moss group-hover:text-safety-orange">{p.title}</h3>
+                    <h3 className="font-anton text-base uppercase leading-tight text-midnight-moss group-hover:text-safety-orange-deep">{p.title}</h3>
                     <span className="mt-1 font-barlow text-xs text-gray-500">{p.readMinutes} min read</span>
                   </div>
                 </Link>
               ))}
             </div>
             <div className="mt-8">
-              <Link href="/blog" className="inline-flex items-center gap-2 font-barlow font-extrabold uppercase text-primary hover:text-safety-orange">
+              <Link href="/blog" className="inline-flex items-center gap-2 font-barlow font-extrabold uppercase text-primary hover:text-safety-orange-deep">
                 <ArrowLeft className="h-4 w-4" /> All posts
               </Link>
             </div>

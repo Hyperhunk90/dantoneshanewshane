@@ -151,7 +151,7 @@ function Field({ label, required, children }: { label: string; required?: boolea
   return (
     <label className="flex flex-col gap-1.5">
       <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">
-        {label} {required && <span className="text-safety-orange">*</span>}
+        {label} {required && <span className="text-safety-orange-deep">*</span>}
       </span>
       {children}
     </label>

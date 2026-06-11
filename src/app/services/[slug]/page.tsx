@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               We bring {service.title.toLowerCase()} to homes and businesses across the area. See the local details for{' '}
               {AREA_NAV.map((a, i) => (
                 <span key={a.href}>
-                  <Link href={a.href} className="font-bold text-primary underline decoration-safety-orange underline-offset-2 hover:text-safety-orange">
+                  <Link href={a.href} className="font-bold text-primary underline decoration-safety-orange underline-offset-2 hover:text-safety-orange-deep">
                     {a.label.replace(', LA', '')}
                   </Link>
                   {i < AREA_NAV.length - 1 ? (i === AREA_NAV.length - 2 ? ', and ' : ', ') : '.'}
@@ -128,7 +128,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     <Link
                       key={z.slug}
                       href={`/${z.slug}`}
-                      className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-base uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange"
+                      className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-5 py-4 font-anton text-base uppercase text-midnight-moss shadow-sm transition-all hover:border-safety-orange hover:text-safety-orange-deep"
                     >
                       {z.cityName} <ArrowRight className="h-5 w-5 text-safety-orange" />
                     </Link>
@@ -141,7 +141,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {/* Sidebar */}
           <aside className="space-y-6 lg:col-span-1">
             <div className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
-              <p className="font-barlow text-sm font-bold uppercase tracking-wider text-safety-orange">Typical pricing</p>
+              <p className="font-barlow text-sm font-bold uppercase tracking-wider text-safety-orange-deep">Typical pricing</p>
               <p className="mt-1 font-anton text-xl uppercase text-midnight-moss">{service.pricingRange}</p>
               <p className="mt-2 font-barlow text-base text-gray-600">Every yard is different. We give you a firm number after a quick look, free.</p>
               <Link href="/quote" className="mt-4 block rounded-lg bg-safety-orange py-3 text-center font-anton uppercase tracking-wider text-midnight-moss shadow transition-transform hover:scale-105">
@@ -154,7 +154,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ul className="mt-3 space-y-2">
                 {otherServices.map((s) => (
                   <li key={s.slug}>
-                    <Link href={`/services/${s.slug}`} className="flex items-center gap-2 font-barlow text-base font-semibold text-midnight-moss hover:text-safety-orange">
+                    <Link href={`/services/${s.slug}`} className="flex items-center gap-2 font-barlow text-base font-semibold text-midnight-moss hover:text-safety-orange-deep">
                       <ArrowRight className="h-4 w-4 text-safety-orange" /> {s.title}
                     </Link>
                   </li>

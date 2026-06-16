@@ -70,6 +70,7 @@ const nextConfig = {
 
       // Misc old pages with no direct equivalent.
       { source: '/project-gallery', destination: '/services', permanent: true },
+      { source: '/projects', destination: '/services', permanent: true },
       { source: '/walker-landscaping', destination: '/landscape-design-walker', permanent: true },
       { source: '/about', destination: '/#about', permanent: true },
 

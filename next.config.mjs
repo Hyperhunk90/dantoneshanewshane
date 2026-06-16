@@ -39,6 +39,38 @@ const nextConfig = {
         destination: 'https://southernbucklawn.com/:path*',
         permanent: true,
       },
+      // Sitemap variants bots probe for — point them all at the real one.
+      { source: '/sitemap_index.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/sitemap.xml.gz', destination: '/sitemap.xml', permanent: true },
+
+      // Old /locations/ URL structure → current /service-areas/ structure.
+      { source: '/locations/:slug', destination: '/service-areas/:slug', permanent: true },
+
+      // Old service-area URL patterns still in crawlers' indexes.
+      { source: '/walker-lawn-care', destination: '/service-areas/walker', permanent: true },
+      { source: '/pages/walker-la', destination: '/service-areas/walker', permanent: true },
+      { source: '/baton-rouge-landscaping', destination: '/service-areas/baton-rouge', permanent: true },
+      { source: '/lawn-care-baton-rouge-la', destination: '/service-areas/baton-rouge', permanent: true },
+      { source: '/denham-springs-landscaping', destination: '/service-areas/denham-springs', permanent: true },
+      { source: '/hoa-lawn-care-livingston-parish', destination: '/service-areas/livingston-parish', permanent: true },
+
+      // Old service URL patterns.
+      { source: '/services/residential-lawn-care', destination: '/services/lawn-mowing', permanent: true },
+      { source: '/residential-lawn-care', destination: '/services/lawn-mowing', permanent: true },
+      { source: '/lawn-care-maintenance', destination: '/services/lawn-mowing', permanent: true },
+      { source: '/services/irrigation', destination: '/services', permanent: true },
+      { source: '/landscape-design-install', destination: '/services/landscape-design', permanent: true },
+      { source: '/landscape-design-installation', destination: '/services/landscape-design', permanent: true },
+      { source: '/landscape-design-walker-la', destination: '/landscape-design-walker', permanent: true },
+      { source: '/commercial-landscaping', destination: '/services/commercial-grounds', permanent: true },
+      { source: '/property-preservation', destination: '/services', permanent: true },
+      { source: '/christmas-lights', destination: '/landscape-lighting', permanent: true },
+
+      // Misc old pages with no direct equivalent.
+      { source: '/project-gallery', destination: '/services', permanent: true },
+      { source: '/walker-landscaping', destination: '/landscape-design-walker', permanent: true },
+      { source: '/about', destination: '/#about', permanent: true },
+
       // Common vanity URLs visitors (and old links) might try.
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/get-a-quote', destination: '/quote', permanent: true },
@@ -46,11 +78,6 @@ const nextConfig = {
       { source: '/free-quote', destination: '/quote', permanent: true },
       { source: '/lawn-care', destination: '/services', permanent: true },
       { source: '/landscaping', destination: '/services', permanent: true },
-      // Old pages from the previous build, still in Google's index.
-      { source: '/walker-lawn-care', destination: '/service-areas/walker', permanent: true },
-      { source: '/pages/walker-la', destination: '/service-areas/walker', permanent: true },
-      { source: '/walker-landscaping', destination: '/landscape-design-walker', permanent: true },
-      { source: '/about', destination: '/#about', permanent: true },
     ];
   },
 };

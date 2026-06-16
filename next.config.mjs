@@ -63,6 +63,8 @@ const nextConfig = {
       { source: '/landscape-design-installation', destination: '/services/landscape-design', permanent: true },
       { source: '/landscape-design-walker-la', destination: '/landscape-design-walker', permanent: true },
       { source: '/commercial-landscaping', destination: '/services/commercial-grounds', permanent: true },
+      { source: '/commercial-grounds-maintenance-contract', destination: '/services/commercial-grounds', permanent: true },
+      { source: '/realtor-lawn-services', destination: '/services/commercial-grounds', permanent: true },
       { source: '/property-preservation', destination: '/services', permanent: true },
       { source: '/christmas-lights', destination: '/landscape-lighting', permanent: true },
 

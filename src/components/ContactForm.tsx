@@ -49,16 +49,16 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <label className="flex flex-col gap-1.5">
           <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">Name *</span>
-          <input required value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="Your name" className={inputClass} />
+          <input required autoComplete="name" value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="Your name" className={inputClass} />
         </label>
         <label className="flex flex-col gap-1.5">
           <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">Phone *</span>
-          <input required type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="(225) 555-0123" className={inputClass} />
+          <input required type="tel" inputMode="tel" autoComplete="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="(225) 555-0123" className={inputClass} />
         </label>
       </div>
       <label className="flex flex-col gap-1.5">
         <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">Email</span>
-        <input type="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="you@email.com" className={inputClass} />
+        <input type="email" inputMode="email" autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="you@email.com" className={inputClass} />
       </label>
       <label className="flex flex-col gap-1.5">
         <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">Message *</span>

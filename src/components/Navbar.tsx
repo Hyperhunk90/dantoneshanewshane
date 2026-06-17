@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { SITE, SERVICE_NAV, AREA_NAV } from '@/data/site';
 
 export default function Navbar() {
@@ -124,8 +124,15 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile: quick quote button + menu toggle */}
+        {/* Mobile: tap-to-call + quick quote button + menu toggle */}
         <div className="flex items-center gap-2 lg:hidden">
+          <a
+            href={SITE.phoneHref}
+            aria-label={`Call Southern Buck Lawn at ${SITE.phone}`}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-safety-orange active:scale-95"
+          >
+            <Phone className="h-5 w-5" />
+          </a>
           <Link
             href="/quote"
             onClick={closeAll}
@@ -168,6 +175,13 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="border-t border-primary/20 pt-3">
+              <a
+                href={SITE.phoneHref}
+                onClick={closeAll}
+                className="mb-2 flex items-center justify-center gap-2 rounded-lg border border-white/20 py-3 text-center font-barlow text-lg font-bold text-white"
+              >
+                <Phone className="h-5 w-5 text-safety-orange" /> Call {SITE.phone}
+              </a>
               <Link href="/quote" onClick={closeAll} className="block rounded-lg bg-safety-orange py-3 text-center font-barlow text-lg font-bold text-midnight-moss shadow-lg">
                 Get a Free Quote
               </Link>

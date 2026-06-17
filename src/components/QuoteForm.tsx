@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Send, CheckCircle2, Loader2, Star } from 'lucide-react';
 import { trackEvent } from '@/lib/ga';
+import { GOOGLE_RATING } from '@/data/reviews';
 
 const SERVICES = [
   'Weekly Lawn Mowing & Edging',
@@ -70,21 +71,32 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={submit} className="space-y-5">
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-lg bg-mist-green px-4 py-2.5 text-center">
+        <span className="flex items-center gap-1 text-safety-orange-deep">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-4 w-4 fill-safety-orange-deep" />
+          ))}
+        </span>
+        <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">
+          {GOOGLE_RATING.score.toFixed(1)} on Google · Licensed &amp; Insured · Free estimates
+        </span>
+      </div>
+
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Full name" required>
-          <input required value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="Your name" className={inputClass} />
+          <input required autoComplete="name" value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="Your name" className={inputClass} />
         </Field>
         <Field label="Phone" required>
-          <input required type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="(225) 555-0123" className={inputClass} />
+          <input required type="tel" inputMode="tel" autoComplete="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="(225) 555-0123" className={inputClass} />
         </Field>
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Email">
-          <input type="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="you@email.com" className={inputClass} />
+          <input type="email" inputMode="email" autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="you@email.com" className={inputClass} />
         </Field>
         <Field label="Service address or city" required>
-          <input required value={form.address} onChange={(e) => update('address', e.target.value)} placeholder="Street or city (Walker, Denham Springs...)" className={inputClass} />
+          <input required autoComplete="street-address" value={form.address} onChange={(e) => update('address', e.target.value)} placeholder="Street or city (Walker, Denham Springs...)" className={inputClass} />
         </Field>
       </div>
 

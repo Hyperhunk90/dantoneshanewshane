@@ -49,9 +49,21 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     })),
   };
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    serviceType: service.title,
+    description: service.metaDescription,
+    url: `${SITE.url}/services/${service.slug}`,
+    provider: { '@type': 'LocalBusiness', '@id': `${SITE.url}/#business`, name: SITE.name },
+    areaServed: SITE.serviceAreas.map((a) => ({ '@type': 'City', name: a })),
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
       {/* Hero */}
       <header className="relative overflow-hidden bg-midnight-moss pt-28 text-white">

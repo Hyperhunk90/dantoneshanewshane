@@ -4,7 +4,11 @@ import './globals.css';
 import SiteChrome from '@/components/SiteChrome';
 import GaTracker from '@/components/GaTracker';
 import { SITE } from '@/data/site';
+import { REVIEWS, GOOGLE_RATING } from '@/data/reviews';
 import Script from 'next/script';
+
+// Landscape image used as the default social-share preview (1.91:1 friendly).
+const OG_IMAGE = '/images/residential-backyard-lawn-mowing-stripes-louisiana.webp';
 
 const anton = Anton({
   weight: '400',
@@ -49,7 +53,14 @@ export const metadata: Metadata = {
     title: 'Southern Buck Lawn | Lawn Care & Landscaping in Walker, LA',
     description:
       'Weekly mowing, weed control, and landscape design across Walker, Denham Springs, Baton Rouge, and Livingston Parish.',
-    images: [{ url: '/images/hero-lawn-care-denham-springs-louisiana.webp', width: 750, height: 1665 }],
+    images: [{ url: OG_IMAGE }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Southern Buck Lawn | Lawn Care & Landscaping in Walker, LA',
+    description:
+      'Weekly mowing, weed control, and landscape design across Walker, Denham Springs, Baton Rouge, and Livingston Parish.',
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 };
@@ -59,7 +70,7 @@ const businessJsonLd = {
   '@type': 'LandscapingBusiness',
   name: SITE.name,
   image: `${SITE.url}/images/southern-buck-lawn-logo.png`,
-  '@id': SITE.url,
+  '@id': `${SITE.url}/#business`,
   url: SITE.url,
   telephone: '+12253694434',
   email: SITE.email,
@@ -79,7 +90,20 @@ const businessJsonLd = {
     longitude: SITE.geo.lng,
   },
   hasMap: SITE.social.google,
-  sameAs: [SITE.social.facebook, SITE.social.yelp, SITE.social.bbb],
+  sameAs: [SITE.social.google, SITE.social.facebook, SITE.social.yelp, SITE.social.bbb],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: GOOGLE_RATING.score,
+    reviewCount: GOOGLE_RATING.count,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: REVIEWS.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.author },
+    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+    reviewBody: r.text,
+  })),
   areaServed: SITE.serviceAreas.map((a) => ({ '@type': 'City', name: a })),
   openingHoursSpecification: [
     {

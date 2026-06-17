@@ -22,6 +22,8 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       <Navbar />
       <main>{children}</main>
       <Footer />
+      {/* Spacer so the mobile sticky action bar never covers footer content. */}
+      <div className="h-14 sm:hidden" aria-hidden />
       <TextBubble />
     </>
   );

@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ zipper: s
   const { zipper } = await params;
   const combo = getZipper(zipper);
   if (!combo) return {};
+  const service = getService(combo.serviceSlug);
   return {
     title: combo.metaTitle,
     description: combo.metaDescription,
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ zipper: s
       title: combo.metaTitle,
       description: combo.metaDescription,
       url: `${SITE.url}/${combo.slug}`,
+      images: service ? [{ url: service.image }] : undefined,
     },
   };
 }
@@ -50,8 +52,32 @@ export default async function ZipperPage({ params }: { params: Promise<{ zipper:
   );
   const faqs = getZipperFaqs(combo);
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${combo.serviceTitle} in ${combo.cityName}, LA`,
+    serviceType: combo.serviceTitle,
+    description: combo.metaDescription,
+    url: `${SITE.url}/${combo.slug}`,
+    provider: { '@type': 'LocalBusiness', '@id': `${SITE.url}/#business`, name: SITE.name },
+    areaServed: { '@type': 'City', name: combo.cityName },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+
       {/* Hero */}
       <header className="relative overflow-hidden bg-midnight-moss pt-28 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">

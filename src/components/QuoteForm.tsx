@@ -33,6 +33,7 @@ export default function QuoteForm() {
     lotSize: LOT_SIZES[1],
     frequency: FREQUENCIES[0],
     message: '',
+    company: '',
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
@@ -71,6 +72,20 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={submit} className="space-y-5">
+      {/* Honeypot — hidden from people, irresistible to bots. Leave empty. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label>
+          Company
+          <input
+            type="text"
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.company}
+            onChange={(e) => update('company', e.target.value)}
+          />
+        </label>
+      </div>
       <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-lg bg-mist-green px-4 py-2.5 text-center">
         <span className="flex items-center gap-1 text-safety-orange-deep">
           {Array.from({ length: 5 }).map((_, i) => (

@@ -6,7 +6,14 @@ export const runtime = 'nodejs';
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
-    const { type = 'Lead', name, phone, email, address, service, lotSize, frequency, message } = data;
+    const { type = 'Lead', name, phone, email, address, service, lotSize, frequency, message, company } = data;
+
+    // Honeypot: the hidden "company" field is invisible to real visitors, so
+    // anything filling it is a bot. Pretend success so it doesn't retry, but
+    // never send the email.
+    if (company) {
+      return NextResponse.json({ ok: true });
+    }
 
     if (!name || !phone) {
       return NextResponse.json({ error: 'Name and phone are required.' }, { status: 400 });

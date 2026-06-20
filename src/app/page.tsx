@@ -17,9 +17,11 @@ const serviceIcons: Record<string, React.ReactNode> = {
 };
 
 const gallery = [
+  { src: '/images/lawn-mowing-stripes-backyard-walker-la.webp', alt: 'Bold mowing stripes across a Walker, Louisiana backyard with a shade tree in the middle, by Southern Buck Lawn', w: 563, h: 1000 },
+  { src: '/images/commercial-lawn-stripes-rkm-baton-rouge.webp', alt: 'Crisp mowing stripes on the commercial lawn at the RKM location in Baton Rouge, maintained by Southern Buck Lawn', w: 1300, h: 720 },
+  { src: '/images/commercial-wildflowers-rkm-headquarters-clinton-la.webp', alt: 'Wildflowers and manicured grounds at RKM headquarters in Clinton, Louisiana, kept up by Southern Buck Lawn', w: 1600, h: 900 },
   { src: '/images/black-mulch-install-before-after.webp', alt: 'Before and after black mulch install on a Louisiana front bed by Southern Buck Lawn', w: 1344, h: 768 },
   { src: '/images/flower-bed-mulch-transformation-before-after-louisiana.webp', alt: 'Three-stage flower bed transformation with black mulch and stone border by Southern Buck Lawn in Louisiana', w: 900, h: 1600 },
-  { src: '/images/mulch-install-side-yard-denham-springs.webp', alt: 'Fresh red mulch and boxwoods along a Denham Springs home', w: 800, h: 1776 },
   { src: '/images/hedge-trimming-bed-cleanup-baton-rouge.webp', alt: 'Overgrown bed before a Baton Rouge hedge trimming and cleanup', w: 800, h: 1422 },
 ];
 
@@ -68,7 +70,7 @@ export default function Home() {
 
             <div className="inline-flex items-center gap-4 rounded-full border border-white/15 bg-black/25 p-2.5 pr-6 backdrop-blur-sm">
               <Image
-                src="/images/michael-dantone-southern-buck-lawn-walker.png"
+                src="/images/michael-dantone-southern-buck-lawn-walker.webp"
                 alt="Michael Dantone, owner of Southern Buck Lawn in Walker, Louisiana"
                 width={56}
                 height={56}
@@ -205,10 +207,10 @@ export default function Home() {
           <div className="flex-none">
             <div className="flex h-60 w-60 items-center justify-center rounded-3xl bg-forest-dark shadow-2xl sm:h-72 sm:w-72">
               <Image
-                src="/images/southern-buck-lawn-mascot.png"
-                alt="Southern Buck Lawn deer mascot"
-                width={240}
-                height={240}
+                src="/images/southern-buck-lawn-buck-mascot.webp"
+                alt="Southern Buck Lawn deer mascot in overalls"
+                width={300}
+                height={300}
                 className="h-52 w-52 object-contain sm:h-60 sm:w-60"
               />
             </div>

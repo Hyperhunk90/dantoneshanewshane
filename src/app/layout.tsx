@@ -84,7 +84,6 @@ const businessJsonLd = {
   '@id': `${SITE.url}/#business`,
   url: SITE.url,
   telephone: '+12253694434',
-  email: SITE.email,
   founder: SITE.owner,
   priceRange: '$$',
   address: {

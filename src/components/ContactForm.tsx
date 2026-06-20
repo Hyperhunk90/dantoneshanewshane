@@ -5,7 +5,7 @@ import { Send, CheckCircle2, Loader2 } from 'lucide-react';
 import { trackEvent } from '@/lib/ga';
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '', company: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const update = (k: string, v: string) => setForm((p) => ({ ...p, [k]: v }));
@@ -46,6 +46,20 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={submit} className="space-y-5">
+      {/* Honeypot — hidden from people, irresistible to bots. Leave empty. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label>
+          Company
+          <input
+            type="text"
+            name="company"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.company}
+            onChange={(e) => update('company', e.target.value)}
+          />
+        </label>
+      </div>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <label className="flex flex-col gap-1.5">
           <span className="font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss">Name *</span>

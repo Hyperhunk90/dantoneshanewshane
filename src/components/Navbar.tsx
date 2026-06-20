@@ -40,13 +40,8 @@ export default function Navbar() {
             className="h-14 w-auto transition-transform group-hover:scale-105"
             priority
           />
-          <span className="flex flex-col leading-none">
-            <span className="font-anton text-2xl tracking-tight text-midnight-moss">
-              SOUTHERN BUCK <span className="text-safety-orange">LAWN</span>
-            </span>
-            <span className="font-archivo text-xs font-bold uppercase tracking-widest text-bark">
-              Lawn &amp; Landscaping
-            </span>
+          <span className="font-anton text-2xl tracking-tight text-midnight-moss">
+            SOUTHERN BUCK <span className="text-safety-orange">LAWN</span>
           </span>
         </Link>
 

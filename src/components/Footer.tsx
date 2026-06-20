@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronRight, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { ChevronRight, Phone, MapPin, Clock } from 'lucide-react';
 import { SITE, SERVICE_NAV, AREA_NAV } from '@/data/site';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export default function Footer() {
   return (
@@ -21,9 +22,7 @@ export default function Footer() {
               <a href={SITE.phoneHref} className="flex items-center gap-2 text-white/80 hover:text-safety-orange">
                 <Phone className="h-4 w-4 text-safety-orange" /> {SITE.phone}
               </a>
-              <a href={SITE.emailHref} className="flex items-center gap-2 text-white/80 hover:text-safety-orange">
-                <Mail className="h-4 w-4 text-safety-orange" /> {SITE.email}
-              </a>
+              <ObfuscatedEmail className="flex items-center gap-2 text-white/80 hover:text-safety-orange" />
               <p className="flex items-center gap-2 text-white/80">
                 <MapPin className="h-4 w-4 text-safety-orange" /> {SITE.street}, {SITE.city}, {SITE.region} {SITE.postalCode}
               </p>

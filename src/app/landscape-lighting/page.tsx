@@ -13,12 +13,12 @@ import {
   PiggyBank,
   ArrowRight,
   PhoneCall,
-  Mail,
   Star,
   Facebook,
 } from 'lucide-react';
 import { SITE } from '@/data/site';
 import { REVIEWS } from '@/data/reviews';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export const metadata: Metadata = {
   title: 'Outdoor Landscape Lighting in Walker, Denham Springs & Baton Rouge | Southern Buck Lawn',
@@ -243,9 +243,7 @@ export default function LandscapeLightingPage() {
             <a href={SITE.phoneHref} className="flex items-center gap-2 text-lg font-bold hover:text-safety-orange">
               <PhoneCall className="h-5 w-5 text-safety-orange" /> {SITE.phone}
             </a>
-            <a href={SITE.emailHref} className="flex items-center gap-2 hover:text-safety-orange">
-              <Mail className="h-5 w-5 text-safety-orange" /> {SITE.email}
-            </a>
+            <ObfuscatedEmail className="flex items-center gap-2 hover:text-safety-orange" iconClassName="h-5 w-5 text-safety-orange" />
             <p className="text-white/60">Serving Walker, Denham Springs, Baton Rouge &amp; Livingston Parish</p>
           </div>
           <div className="flex items-center gap-4">

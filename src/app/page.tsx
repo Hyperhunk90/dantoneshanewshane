@@ -205,11 +205,11 @@ export default function Home() {
           <div className="flex-none">
             <div className="flex h-60 w-60 items-center justify-center rounded-3xl bg-forest-dark shadow-2xl sm:h-72 sm:w-72">
               <Image
-                src="/images/southern-buck-lawn-mascot.png"
+                src="/images/southern-buck-lawn-mascot-waving.png"
                 alt="Southern Buck Lawn deer mascot"
                 width={240}
-                height={240}
-                className="h-52 w-52 object-contain sm:h-60 sm:w-60"
+                height={450}
+                className="h-52 w-auto object-contain sm:h-60"
               />
             </div>
           </div>

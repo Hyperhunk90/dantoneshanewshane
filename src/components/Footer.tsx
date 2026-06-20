@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="mb-5 flex w-fit items-center gap-3">
               <Image src="/images/southern-buck-lawn-logo.png" alt="Southern Buck Lawn logo" width={64} height={56} className="h-16 w-auto" />
-              <span className="font-anton text-2xl tracking-wide">SOUTHERN BUCK LAWN</span>
+              <span className="font-anton text-2xl tracking-wide">SOUTHERN BUCK <span className="text-safety-orange">LAWN</span></span>
             </Link>
             <p className="mb-6 max-w-md font-barlow text-lg leading-relaxed text-white/70">
               Local lawn care and landscaping from Walker to Baton Rouge. Run by Michael Dantone, the Landscape Mayor. Same crew, same day, work we put our name on.

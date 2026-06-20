@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Anton, Barlow_Condensed } from 'next/font/google';
+import { Anton, Archivo, Caveat } from 'next/font/google';
 import './globals.css';
 import SiteChrome from '@/components/SiteChrome';
 import GaTracker from '@/components/GaTracker';
@@ -20,14 +20,25 @@ const anton = Anton({
   fallback: ['Arial Narrow', 'Arial', 'sans-serif'],
 });
 
-const barlow = Barlow_Condensed({
-  weight: ['400', '500', '600', '700'],
+// Archivo is the body/UI face from the Southern Buck Lawn landing-page design.
+const archivo = Archivo({
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
-  variable: '--font-barlow-src',
-  display: 'optional',
+  variable: '--font-archivo-src',
+  display: 'swap',
   preload: true,
   adjustFontFallback: true,
   fallback: ['Arial', 'sans-serif'],
+});
+
+// Caveat is the friendly script used for the small "eyebrow" accent lines.
+const caveat = Caveat({
+  weight: ['600', '700'],
+  subsets: ['latin'],
+  variable: '--font-caveat-src',
+  display: 'swap',
+  preload: false,
+  fallback: ['Comic Sans MS', 'cursive'],
 });
 
 export const metadata: Metadata = {
@@ -129,7 +140,7 @@ const businessJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${anton.variable} ${barlow.variable}`}>
+    <html lang="en" className={`${anton.variable} ${archivo.variable} ${caveat.variable}`}>
       <body>
         <script
           type="application/ld+json"

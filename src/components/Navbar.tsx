@@ -26,8 +26,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full border-b border-primary/20 transition-all duration-300 ${
-        scrolled ? 'bg-midnight-moss/95 shadow-lg backdrop-blur-md' : 'bg-midnight-moss/90 backdrop-blur-sm'
+      className={`fixed top-0 z-50 w-full border-b border-cream-line bg-cream transition-shadow duration-300 ${
+        scrolled ? 'shadow-md' : 'shadow-sm'
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -41,18 +41,18 @@ export default function Navbar() {
             priority
           />
           <span className="flex flex-col leading-none">
-            <span className="font-anton text-2xl tracking-tight text-white transition-colors group-hover:text-safety-orange">
-              SOUTHERN BUCK
+            <span className="font-anton text-2xl tracking-tight text-midnight-moss">
+              SOUTHERN BUCK <span className="text-safety-orange">LAWN</span>
             </span>
-            <span className="font-barlow text-xs font-bold uppercase tracking-widest text-sage">
+            <span className="font-archivo text-xs font-bold uppercase tracking-widest text-bark">
               Lawn &amp; Landscaping
             </span>
           </span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden items-center gap-1 lg:flex xl:gap-3">
-          <Link href="/" className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
+        <div className="hidden items-center gap-1 lg:flex xl:gap-2">
+          <Link href="/" className="px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep">
             Home
           </Link>
 
@@ -60,19 +60,19 @@ export default function Navbar() {
             <button
               onClick={() => setServicesOpen((v) => !v)}
               onMouseEnter={() => setServicesOpen(true)}
-              className="flex items-center gap-1 px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange"
+              className="flex items-center gap-1 px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep"
             >
               Services
               <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             {servicesOpen && (
-              <div className="absolute right-0 mt-1 w-64 rounded-lg border border-primary/40 bg-midnight-moss py-2 shadow-2xl">
+              <div className="absolute right-0 mt-1 w-64 rounded-xl border border-cream-line bg-white py-2 shadow-2xl">
                 {SERVICE_NAV.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
                     onClick={closeAll}
-                    className="block px-4 py-2 font-barlow text-base text-white hover:bg-primary/40 hover:text-safety-orange"
+                    className="block px-4 py-2 font-archivo text-base text-midnight-moss hover:bg-cream hover:text-safety-orange-deep"
                   >
                     {s.label}
                   </Link>
@@ -85,19 +85,19 @@ export default function Navbar() {
             <button
               onClick={() => setAreasOpen((v) => !v)}
               onMouseEnter={() => setAreasOpen(true)}
-              className="flex items-center gap-1 px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange"
+              className="flex items-center gap-1 px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep"
             >
               Service Areas
               <ChevronDown className={`h-4 w-4 transition-transform ${areasOpen ? 'rotate-180' : ''}`} />
             </button>
             {areasOpen && (
-              <div className="absolute right-0 mt-1 w-60 rounded-lg border border-primary/40 bg-midnight-moss py-2 shadow-2xl">
+              <div className="absolute right-0 mt-1 w-60 rounded-xl border border-cream-line bg-white py-2 shadow-2xl">
                 {AREA_NAV.map((a) => (
                   <Link
                     key={a.href}
                     href={a.href}
                     onClick={closeAll}
-                    className="block px-4 py-2 font-barlow text-base text-white hover:bg-primary/40 hover:text-safety-orange"
+                    className="block px-4 py-2 font-archivo text-base text-midnight-moss hover:bg-cream hover:text-safety-orange-deep"
                   >
                     {a.label}
                   </Link>
@@ -106,22 +106,18 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/#about" className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
+          <Link href="/#about" className="px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep">
             About
           </Link>
-          <Link href="/blog" className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
+          <Link href="/blog" className="px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep">
             Blog
           </Link>
-          <a href={SITE.phoneHref} className="px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange">
-            {SITE.phone}
-          </a>
-          <Link
-            href="/quote"
-            onClick={closeAll}
-            className="ml-2 rounded-lg bg-safety-orange px-5 py-2.5 font-barlow text-base font-bold text-midnight-moss shadow-md transition-all hover:scale-105 active:scale-95"
+          <a
+            href={SITE.phoneHref}
+            className="ml-2 flex items-center gap-2 rounded-xl bg-safety-orange px-5 py-2.5 font-archivo text-base font-bold text-white shadow-md transition-all hover:scale-105 active:scale-95"
           >
-            Get a Free Quote
-          </Link>
+            <Phone className="h-4 w-4" /> {SITE.phone}
+          </a>
         </div>
 
         {/* Mobile: tap-to-call + quick quote button + menu toggle */}
@@ -129,18 +125,18 @@ export default function Navbar() {
           <a
             href={SITE.phoneHref}
             aria-label={`Call Southern Buck Lawn at ${SITE.phone}`}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-safety-orange active:scale-95"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-cream-line text-safety-orange-deep active:scale-95"
           >
             <Phone className="h-5 w-5" />
           </a>
           <Link
             href="/quote"
             onClick={closeAll}
-            className="rounded-lg bg-safety-orange px-4 py-2 font-barlow text-sm font-bold uppercase tracking-wide text-midnight-moss shadow-md active:scale-95"
+            className="rounded-lg bg-safety-orange px-4 py-2 font-archivo text-sm font-bold uppercase tracking-wide text-white shadow-md active:scale-95"
           >
             Get Quote
           </Link>
-          <button onClick={() => setOpen((v) => !v)} className="p-1 text-sage hover:text-white" aria-label="Menu">
+          <button onClick={() => setOpen((v) => !v)} className="p-1 text-primary hover:text-safety-orange-deep" aria-label="Menu">
             {open ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
           </button>
         </div>
@@ -148,41 +144,41 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-primary/20 bg-midnight-moss pb-4 lg:hidden">
+        <div className="border-t border-cream-line bg-cream pb-4 lg:hidden">
           <div className="space-y-1 px-3 pt-2">
-            <Link href="/" onClick={closeAll} className="block rounded px-3 py-2 font-barlow text-lg font-bold text-white hover:bg-primary/20">
+            <Link href="/" onClick={closeAll} className="block rounded px-3 py-2 font-archivo text-lg font-bold text-midnight-moss hover:bg-white">
               Home
             </Link>
-            <div className="border-t border-primary/20 pt-2">
-              <p className="px-3 py-1 font-anton text-sm uppercase tracking-wider text-sage">Services</p>
+            <div className="border-t border-cream-line pt-2">
+              <p className="px-3 py-1 font-anton text-sm uppercase tracking-wider text-safety-orange-deep">Services</p>
               {SERVICE_NAV.map((s) => (
-                <Link key={s.href} href={s.href} onClick={closeAll} className="block px-5 py-2 font-barlow text-base text-white hover:bg-primary/20">
+                <Link key={s.href} href={s.href} onClick={closeAll} className="block px-5 py-2 font-archivo text-base text-midnight-moss hover:bg-white">
                   {s.label}
                 </Link>
               ))}
             </div>
-            <div className="border-t border-primary/20 pt-2">
-              <p className="px-3 py-1 font-anton text-sm uppercase tracking-wider text-sage">Service Areas</p>
+            <div className="border-t border-cream-line pt-2">
+              <p className="px-3 py-1 font-anton text-sm uppercase tracking-wider text-safety-orange-deep">Service Areas</p>
               {AREA_NAV.map((a) => (
-                <Link key={a.href} href={a.href} onClick={closeAll} className="block px-5 py-2 font-barlow text-base text-white hover:bg-primary/20">
+                <Link key={a.href} href={a.href} onClick={closeAll} className="block px-5 py-2 font-archivo text-base text-midnight-moss hover:bg-white">
                   {a.label}
                 </Link>
               ))}
             </div>
-            <div className="border-t border-primary/20 pt-2">
-              <Link href="/blog" onClick={closeAll} className="block rounded px-3 py-2 font-barlow text-lg font-bold text-white hover:bg-primary/20">
+            <div className="border-t border-cream-line pt-2">
+              <Link href="/blog" onClick={closeAll} className="block rounded px-3 py-2 font-archivo text-lg font-bold text-midnight-moss hover:bg-white">
                 Blog
               </Link>
             </div>
-            <div className="border-t border-primary/20 pt-3">
+            <div className="border-t border-cream-line pt-3">
               <a
                 href={SITE.phoneHref}
                 onClick={closeAll}
-                className="mb-2 flex items-center justify-center gap-2 rounded-lg border border-white/20 py-3 text-center font-barlow text-lg font-bold text-white"
+                className="mb-2 flex items-center justify-center gap-2 rounded-lg border border-cream-line bg-white py-3 text-center font-archivo text-lg font-bold text-midnight-moss"
               >
-                <Phone className="h-5 w-5 text-safety-orange" /> Call {SITE.phone}
+                <Phone className="h-5 w-5 text-safety-orange-deep" /> Call {SITE.phone}
               </a>
-              <Link href="/quote" onClick={closeAll} className="block rounded-lg bg-safety-orange py-3 text-center font-barlow text-lg font-bold text-midnight-moss shadow-lg">
+              <Link href="/quote" onClick={closeAll} className="block rounded-lg bg-safety-orange py-3 text-center font-archivo text-lg font-bold text-white shadow-lg">
                 Get a Free Quote
               </Link>
             </div>

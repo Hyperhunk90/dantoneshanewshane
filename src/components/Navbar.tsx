@@ -60,6 +60,8 @@ export default function Navbar() {
             <button
               onClick={() => setServicesOpen((v) => !v)}
               onMouseEnter={() => setServicesOpen(true)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
               className="flex items-center gap-1 px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange"
             >
               Services
@@ -85,6 +87,8 @@ export default function Navbar() {
             <button
               onClick={() => setAreasOpen((v) => !v)}
               onMouseEnter={() => setAreasOpen(true)}
+              aria-expanded={areasOpen}
+              aria-haspopup="true"
               className="flex items-center gap-1 px-3 py-2 font-barlow text-lg font-semibold text-white/80 transition-colors hover:text-safety-orange"
             >
               Service Areas
@@ -102,6 +106,13 @@ export default function Navbar() {
                     {a.label}
                   </Link>
                 ))}
+                <Link
+                  href="/service-areas"
+                  onClick={closeAll}
+                  className="mt-1 block border-t border-primary/30 px-4 pt-2 font-barlow text-base font-bold text-safety-orange hover:text-white"
+                >
+                  All Service Areas
+                </Link>
               </div>
             )}
           </div>
@@ -162,7 +173,9 @@ export default function Navbar() {
               ))}
             </div>
             <div className="border-t border-primary/20 pt-2">
-              <p className="px-3 py-1 font-anton text-sm uppercase tracking-wider text-sage">Service Areas</p>
+              <Link href="/service-areas" onClick={closeAll} className="block px-3 py-1 font-anton text-sm uppercase tracking-wider text-sage hover:text-safety-orange">
+                Service Areas
+              </Link>
               {AREA_NAV.map((a) => (
                 <Link key={a.href} href={a.href} onClick={closeAll} className="block px-5 py-2 font-barlow text-base text-white hover:bg-primary/20">
                   {a.label}

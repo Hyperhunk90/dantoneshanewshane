@@ -7,8 +7,14 @@ import { SITE } from '@/data/site';
 import { REVIEWS, GOOGLE_RATING } from '@/data/reviews';
 import Script from 'next/script';
 
-// Landscape image used as the default social-share preview (1.91:1 friendly).
-const OG_IMAGE = '/images/residential-backyard-lawn-mowing-stripes-louisiana.webp';
+// Landscape image used as the default social-share preview. 1920x1080 (16:9)
+// renders cleanly as a large summary card on Facebook, X, and LinkedIn.
+const OG_IMAGE = {
+  url: '/images/hero-background-lawn-care-louisiana.webp',
+  width: 1920,
+  height: 1080,
+  alt: 'Fresh mulch bed, stone border, and healthy green lawn by Southern Buck Lawn in Louisiana',
+};
 
 const anton = Anton({
   weight: '400',
@@ -53,14 +59,14 @@ export const metadata: Metadata = {
     title: 'Southern Buck Lawn | Lawn Care & Landscaping in Walker, LA',
     description:
       'Weekly mowing, weed control, and landscape design across Walker, Denham Springs, Baton Rouge, and Livingston Parish.',
-    images: [{ url: OG_IMAGE }],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Southern Buck Lawn | Lawn Care & Landscaping in Walker, LA',
     description:
       'Weekly mowing, weed control, and landscape design across Walker, Denham Springs, Baton Rouge, and Livingston Parish.',
-    images: [OG_IMAGE],
+    images: [{ url: OG_IMAGE.url, alt: OG_IMAGE.alt }],
   },
   robots: { index: true, follow: true },
 };
@@ -127,6 +133,15 @@ const businessJsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url,
+  publisher: { '@id': `${SITE.url}/#business` },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${anton.variable} ${barlow.variable}`}>
@@ -134,6 +149,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <SiteChrome>{children}</SiteChrome>
         <GaTracker />

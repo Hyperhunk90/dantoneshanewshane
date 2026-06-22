@@ -56,7 +56,9 @@ export default function Footer() {
 
           {/* Areas */}
           <div>
-            <h2 className="mb-5 font-anton text-xl uppercase tracking-wider text-safety-orange">Service Areas</h2>
+            <h2 className="mb-5 font-anton text-xl uppercase tracking-wider text-safety-orange">
+              <Link href="/service-areas" className="hover:text-orange-hot">Service Areas</Link>
+            </h2>
             <ul className="space-y-3">
               {AREA_NAV.map((a) => (
                 <li key={a.href}>

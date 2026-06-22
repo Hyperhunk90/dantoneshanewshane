@@ -4,7 +4,6 @@ import './globals.css';
 import SiteChrome from '@/components/SiteChrome';
 import GaTracker from '@/components/GaTracker';
 import { SITE } from '@/data/site';
-import { REVIEWS, GOOGLE_RATING } from '@/data/reviews';
 import Script from 'next/script';
 
 // Landscape image used as the default social-share preview. 1920x1080 (16:9)
@@ -107,19 +106,6 @@ const businessJsonLd = {
   },
   hasMap: SITE.social.google,
   sameAs: [SITE.social.google, SITE.social.facebook, SITE.social.yelp, SITE.social.bbb],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: GOOGLE_RATING.score,
-    reviewCount: GOOGLE_RATING.count,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: REVIEWS.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.author },
-    reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-    reviewBody: r.text,
-  })),
   areaServed: SITE.serviceAreas.map((a) => ({ '@type': 'City', name: a })),
   openingHoursSpecification: [
     {

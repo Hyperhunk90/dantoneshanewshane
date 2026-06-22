@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col gap-4 pt-2 sm:flex-row">
-              <Link href="/quote" className="group flex items-center justify-center gap-2 rounded-xl bg-safety-orange px-8 py-4 font-anton text-lg uppercase tracking-wider text-white shadow-xl transition-all hover:scale-105 active:scale-95">
+              <Link href="/quote" className="group flex items-center justify-center gap-2 rounded-xl bg-safety-orange px-8 py-4 font-anton text-lg uppercase tracking-wider text-midnight-moss shadow-xl transition-all hover:scale-105 active:scale-95">
                 Get a Free Quote <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <a href={SITE.phoneHref} className="flex items-center justify-center gap-2 rounded-xl border-2 border-white/55 bg-white/10 px-8 py-4 font-anton text-lg uppercase tracking-wider text-white backdrop-blur-sm transition-all hover:bg-white/20">
@@ -104,8 +104,8 @@ export default function Home() {
       {/* OFFER STRIP */}
       <section className="bg-safety-orange py-5">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-x-4 gap-y-1 px-4 text-center sm:flex-row sm:px-6 lg:px-8">
-          <span className="font-anton text-2xl uppercase tracking-wide text-white sm:text-3xl">Free estimates &middot; 24-hour callback</span>
-          <span className="font-archivo text-base font-semibold text-white/90">New customers welcome &mdash; same crew, same day, every week.</span>
+          <span className="font-anton text-2xl uppercase tracking-wide text-midnight-moss sm:text-3xl">Free estimates &middot; 24-hour callback</span>
+          <span className="font-archivo text-base font-semibold text-midnight-moss">New customers welcome &mdash; same crew, same day, every week.</span>
         </div>
       </section>
 
@@ -232,7 +232,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <Link href="/quote" className="mt-8 inline-flex items-center gap-2 border-b-2 border-safety-orange font-archivo text-lg font-extrabold uppercase tracking-wide text-safety-orange transition-all hover:gap-3 hover:text-white hover:border-white">
+            <Link href="/quote" className="mt-8 inline-flex items-center gap-2 border-b-2 border-safety-orange font-archivo text-lg font-extrabold uppercase tracking-wide text-white transition-all hover:gap-3 hover:border-sage hover:text-sage">
               Schedule a free walk-through <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
@@ -306,7 +306,7 @@ export default function Home() {
             Free estimate, 24-hour callback, no pressure. Call or text for the best-looking yard on the street.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/quote" className="group flex items-center justify-center gap-2 rounded-xl bg-safety-orange px-8 py-4 font-anton text-lg uppercase tracking-wider text-white shadow-xl transition-all hover:scale-105 active:scale-95">
+            <Link href="/quote" className="group flex items-center justify-center gap-2 rounded-xl bg-safety-orange px-8 py-4 font-anton text-lg uppercase tracking-wider text-midnight-moss shadow-xl transition-all hover:scale-105 active:scale-95">
               Get My Free Quote <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a href={SITE.phoneHref} className="flex items-center justify-center gap-3 rounded-xl bg-midnight-moss px-8 py-4 font-anton text-lg uppercase tracking-wider text-white shadow-xl transition-transform hover:scale-105">

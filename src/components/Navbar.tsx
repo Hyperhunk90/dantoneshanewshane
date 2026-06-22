@@ -120,7 +120,7 @@ export default function Navbar() {
           </Link>
           <a
             href={SITE.phoneHref}
-            className="ml-2 flex items-center gap-2 rounded-xl bg-safety-orange px-5 py-2.5 font-archivo text-base font-bold text-white shadow-md transition-all hover:scale-105 active:scale-95"
+            className="ml-2 flex items-center gap-2 rounded-xl bg-safety-orange px-5 py-2.5 font-archivo text-base font-bold text-midnight-moss shadow-md transition-all hover:scale-105 active:scale-95"
           >
             <Phone className="h-4 w-4" /> {SITE.phone}
           </a>
@@ -138,7 +138,7 @@ export default function Navbar() {
           <Link
             href="/quote"
             onClick={closeAll}
-            className="rounded-lg bg-safety-orange px-4 py-2 font-archivo text-sm font-bold uppercase tracking-wide text-white shadow-md active:scale-95"
+            className="rounded-lg bg-safety-orange px-4 py-2 font-archivo text-sm font-bold uppercase tracking-wide text-midnight-moss shadow-md active:scale-95"
           >
             Get Quote
           </Link>
@@ -186,7 +186,7 @@ export default function Navbar() {
               >
                 <Phone className="h-5 w-5 text-safety-orange-deep" /> Call {SITE.phone}
               </a>
-              <Link href="/quote" onClick={closeAll} className="block rounded-lg bg-safety-orange py-3 text-center font-archivo text-lg font-bold text-white shadow-lg">
+              <Link href="/quote" onClick={closeAll} className="block rounded-lg bg-safety-orange py-3 text-center font-archivo text-lg font-bold text-midnight-moss shadow-lg">
                 Get a Free Quote
               </Link>
             </div>

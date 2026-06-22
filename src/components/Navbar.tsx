@@ -55,6 +55,8 @@ export default function Navbar() {
             <button
               onClick={() => setServicesOpen((v) => !v)}
               onMouseEnter={() => setServicesOpen(true)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
               className="flex items-center gap-1 px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep"
             >
               Services
@@ -80,6 +82,8 @@ export default function Navbar() {
             <button
               onClick={() => setAreasOpen((v) => !v)}
               onMouseEnter={() => setAreasOpen(true)}
+              aria-expanded={areasOpen}
+              aria-haspopup="true"
               className="flex items-center gap-1 px-3 py-2 font-archivo text-base font-semibold text-primary transition-colors hover:text-safety-orange-deep"
             >
               Service Areas
@@ -97,6 +101,13 @@ export default function Navbar() {
                     {a.label}
                   </Link>
                 ))}
+                <Link
+                  href="/service-areas"
+                  onClick={closeAll}
+                  className="mt-1 block border-t border-cream-line px-4 pt-2 font-archivo text-base font-bold text-safety-orange-deep hover:bg-cream"
+                >
+                  All Service Areas
+                </Link>
               </div>
             )}
           </div>
@@ -153,7 +164,9 @@ export default function Navbar() {
               ))}
             </div>
             <div className="border-t border-cream-line pt-2">
-              <p className="px-3 py-1 font-anton text-sm uppercase tracking-wider text-safety-orange-deep">Service Areas</p>
+              <Link href="/service-areas" onClick={closeAll} className="block px-3 py-1 font-anton text-sm uppercase tracking-wider text-safety-orange-deep hover:text-safety-orange">
+                Service Areas
+              </Link>
               {AREA_NAV.map((a) => (
                 <Link key={a.href} href={a.href} onClick={closeAll} className="block px-5 py-2 font-archivo text-base text-midnight-moss hover:bg-white">
                   {a.label}

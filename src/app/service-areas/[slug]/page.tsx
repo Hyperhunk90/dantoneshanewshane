@@ -55,7 +55,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       <header className="relative overflow-hidden bg-midnight-moss pt-28 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="space-y-5">
-            <Breadcrumbs trail={[{ name: 'Service Areas', href: '/services' }, { name: loc.name, href: `/service-areas/${loc.slug}` }]} />
+            <Breadcrumbs trail={[{ name: 'Service Areas', href: '/service-areas' }, { name: loc.name, href: `/service-areas/${loc.slug}` }]} />
             <p className="inline-flex items-center gap-2 font-barlow text-sm font-bold uppercase tracking-[0.3em] text-safety-orange">
               <MapPin className="h-4 w-4" /> {loc.name}
             </p>

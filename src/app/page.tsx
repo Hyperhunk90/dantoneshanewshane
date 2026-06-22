@@ -74,7 +74,7 @@ export default function Home() {
                 alt="Michael Dantone, owner of Southern Buck Lawn in Walker, Louisiana"
                 width={56}
                 height={56}
-                priority
+                loading="eager"
                 className="h-14 w-14 rounded-full border-2 border-safety-orange object-cover object-top"
               />
               <div className="leading-tight">

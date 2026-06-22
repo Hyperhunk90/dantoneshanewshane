@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronRight, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { ChevronRight, Phone, MapPin, Clock } from 'lucide-react';
 import { SITE, SERVICE_NAV, AREA_NAV } from '@/data/site';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="mb-5 flex w-fit items-center gap-3">
               <Image src="/images/southern-buck-lawn-logo.png" alt="Southern Buck Lawn logo" width={64} height={56} className="h-16 w-auto" />
-              <span className="font-anton text-2xl tracking-wide">SOUTHERN BUCK LAWN</span>
+              <span className="font-anton text-2xl tracking-wide">SOUTHERN BUCK <span className="text-safety-orange">LAWN</span></span>
             </Link>
             <p className="mb-6 max-w-md font-barlow text-lg leading-relaxed text-white/70">
               Local lawn care and landscaping from Walker to Baton Rouge. Run by Michael Dantone, the Landscape Mayor. Same crew, same day, work we put our name on.
@@ -21,9 +22,7 @@ export default function Footer() {
               <a href={SITE.phoneHref} className="flex items-center gap-2 text-white/80 hover:text-safety-orange">
                 <Phone className="h-4 w-4 text-safety-orange" /> {SITE.phone}
               </a>
-              <a href={SITE.emailHref} className="flex items-center gap-2 text-white/80 hover:text-safety-orange">
-                <Mail className="h-4 w-4 text-safety-orange" /> {SITE.email}
-              </a>
+              <ObfuscatedEmail className="flex items-center gap-2 text-white/80 hover:text-safety-orange" />
               <p className="flex items-center gap-2 text-white/80">
                 <MapPin className="h-4 w-4 text-safety-orange" /> {SITE.street}, {SITE.city}, {SITE.region} {SITE.postalCode}
               </p>

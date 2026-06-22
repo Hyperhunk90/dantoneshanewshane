@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { PhoneCall, Mail, Clock, ShieldCheck } from 'lucide-react';
+import { PhoneCall, Clock, ShieldCheck } from 'lucide-react';
 import { SITE } from '@/data/site';
 import QuoteForm from '@/components/QuoteForm';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 
 export const metadata: Metadata = {
   title: 'Get a Free Lawn Care Quote in Walker, Denham Springs & Baton Rouge',
@@ -30,9 +31,7 @@ export default function QuotePage() {
               <a href={SITE.phoneHref} className="flex items-center gap-3 font-barlow text-lg hover:text-sage">
                 <PhoneCall className="h-6 w-6 text-safety-orange" /> {SITE.phone}
               </a>
-              <a href={SITE.emailHref} className="flex items-center gap-3 font-barlow text-lg hover:text-sage">
-                <Mail className="h-6 w-6 text-safety-orange" /> {SITE.email}
-              </a>
+              <ObfuscatedEmail className="flex items-center gap-3 font-barlow text-lg hover:text-sage" iconClassName="h-6 w-6 text-safety-orange" />
               <p className="flex items-center gap-3 font-barlow text-lg">
                 <Clock className="h-6 w-6 text-safety-orange" /> Open 7 days &middot; Mon&ndash;Fri 6AM&ndash;6:30PM
               </p>

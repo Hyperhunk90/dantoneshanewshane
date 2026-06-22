@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { PhoneCall, Mail, MapPin, Clock } from 'lucide-react';
+import { PhoneCall, MapPin, Clock } from 'lucide-react';
 import { SITE } from '@/data/site';
 import ContactForm from '@/components/ContactForm';
+import ObfuscatedEmail from '@/components/ObfuscatedEmail';
 import ServiceAreaMap from '@/components/ServiceAreaMap';
 
 export const metadata: Metadata = {
@@ -31,11 +32,7 @@ export default function ContactPage() {
                 <span className="font-anton text-lg uppercase text-midnight-moss">Call</span>
                 <span className="font-barlow text-lg text-gray-600">{SITE.phone}</span>
               </a>
-              <a href={SITE.emailHref} className="flex flex-col gap-2 rounded-2xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-safety-orange">
-                <Mail className="h-7 w-7 text-safety-orange" />
-                <span className="font-anton text-lg uppercase text-midnight-moss">Email</span>
-                <span className="break-all font-barlow text-base text-gray-600">{SITE.email}</span>
-              </a>
+              <ObfuscatedEmail variant="card" className="flex flex-col gap-2 rounded-2xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-safety-orange" />
               <div className="flex flex-col gap-2 rounded-2xl border border-primary/10 bg-white p-6 shadow-sm">
                 <MapPin className="h-7 w-7 text-safety-orange" />
                 <span className="font-anton text-lg uppercase text-midnight-moss">Based In</span>

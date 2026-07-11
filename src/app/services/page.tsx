@@ -38,7 +38,7 @@ export default function ServicesIndex() {
               className="group grid overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all hover:shadow-xl md:grid-cols-5"
             >
               <div className={`relative h-60 md:col-span-2 md:h-auto ${i % 2 ? 'md:order-2' : ''}`}>
-                <Image src={s.image} alt={s.imageAlt} fill className="object-cover" sizes="(max-width:768px) 100vw, 40vw" />
+                <Image src={s.image} alt={s.imageAlt} fill className="object-cover" sizes="(max-width:768px) 100vw, 40vw" quality={60} />
               </div>
               <div className="space-y-3 p-7 md:col-span-3">
                 <h2 className="font-anton text-2xl uppercase text-primary">{s.title}</h2>

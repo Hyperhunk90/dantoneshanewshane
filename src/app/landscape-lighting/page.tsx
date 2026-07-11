@@ -95,6 +95,7 @@ export default function LandscapeLightingPage() {
             priority
             className="object-cover"
             sizes="100vw"
+            quality={60}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-midnight-moss/90 via-midnight-moss/70 to-midnight-moss/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#143a24]/80 via-transparent to-transparent" />

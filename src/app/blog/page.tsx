@@ -37,7 +37,7 @@ export default function BlogIndex() {
             className="group mb-12 grid overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all hover:shadow-xl lg:grid-cols-2"
           >
             <div className="relative h-64 lg:h-auto">
-              <Image src={featured.heroImage} alt={featured.heroAlt} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" priority />
+              <Image src={featured.heroImage} alt={featured.heroAlt} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" quality={60} priority />
             </div>
             <div className="flex flex-col justify-center space-y-3 p-8">
               <span className="font-barlow text-sm font-bold uppercase tracking-wide text-safety-orange-deep">Latest post</span>
@@ -63,7 +63,7 @@ export default function BlogIndex() {
                   className="group flex flex-col overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="relative h-48">
-                    <Image src={p.heroImage} alt={p.heroAlt} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+                    <Image src={p.heroImage} alt={p.heroAlt} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" quality={60} />
                   </div>
                   <div className="flex grow flex-col space-y-2 p-6">
                     <h2 className="font-anton text-xl uppercase leading-tight text-primary">{p.title}</h2>

@@ -4,7 +4,7 @@ import './globals.css';
 import SiteChrome from '@/components/SiteChrome';
 import GaTracker from '@/components/GaTracker';
 import { SITE } from '@/data/site';
-import Script from 'next/script';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 // Landscape image used as the default social-share preview. 1920x1080 (16:9)
 // renders cleanly as a large summary card on Facebook, X, and LinkedIn.
@@ -152,12 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <SiteChrome>{children}</SiteChrome>
         <GaTracker />
-        {/* lazyOnload keeps gtag.js off the critical path; lib/ga.ts queues any
-            events fired before it arrives, so nothing is lost. */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HYJ6QH6Y1D"
-          strategy="lazyOnload"
-        />
+        <GoogleAnalytics gaId="G-HYJ6QH6Y1D" />
       </body>
     </html>
   );

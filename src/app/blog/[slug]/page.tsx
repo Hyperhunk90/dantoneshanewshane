@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   className="group flex overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-all hover:shadow-lg"
                 >
                   <div className="relative h-28 w-28 flex-shrink-0">
-                    <Image src={p.heroImage} alt={p.heroAlt} fill className="object-cover" sizes="112px" />
+                    <Image src={p.heroImage} alt={p.heroAlt} fill className="object-cover" sizes="112px" quality={60} />
                   </div>
                   <div className="flex flex-col justify-center p-4">
                     <h3 className="font-anton text-base uppercase leading-tight text-midnight-moss group-hover:text-safety-orange-deep">{p.title}</h3>

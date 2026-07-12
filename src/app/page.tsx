@@ -44,7 +44,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            quality={55}
+            quality={60}
             className="object-cover object-[28%_center]"
           />
           {/* Left-to-right dark green wash keeps the headline bold and readable. */}
@@ -163,7 +163,7 @@ export default function Home() {
           alt="Freshly striped backyard lawn mowed by Southern Buck Lawn in Louisiana"
           fill
           sizes="100vw"
-          quality={55}
+          quality={60}
           className="object-cover object-[50%_56%]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-deep-forest/95 via-deep-forest/65 to-deep-forest/5" />
@@ -194,7 +194,7 @@ export default function Home() {
           <div className="grid gap-6 sm:grid-cols-2">
             {gallery.map((g) => (
               <div key={g.src} className="overflow-hidden rounded-2xl border border-cream-line bg-white p-2 shadow-sm">
-                <Image src={g.src} alt={g.alt} width={g.w} height={g.h} sizes="(max-width: 640px) 92vw, 46vw" quality={55} className="h-72 w-full rounded-xl object-cover" />
+                <Image src={g.src} alt={g.alt} width={g.w} height={g.h} sizes="(max-width: 640px) 92vw, 46vw" quality={60} className="h-72 w-full rounded-xl object-cover" />
               </div>
             ))}
           </div>

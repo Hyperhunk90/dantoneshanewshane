@@ -4,7 +4,7 @@ import './globals.css';
 import SiteChrome from '@/components/SiteChrome';
 import GaTracker from '@/components/GaTracker';
 import { SITE } from '@/data/site';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
 // Landscape image used as the default social-share preview. 1920x1080 (16:9)
 // renders cleanly as a large summary card on Facebook, X, and LinkedIn.
@@ -152,7 +152,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <SiteChrome>{children}</SiteChrome>
         <GaTracker />
-        <GoogleAnalytics gaId="G-HYJ6QH6Y1D" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HYJ6QH6Y1D"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

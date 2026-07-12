@@ -6,8 +6,9 @@ import {
 import { SITE, AREA_NAV } from '@/data/site';
 import { SERVICES } from '@/data/services';
 import { REVIEWS } from '@/data/reviews';
-import ServiceAreaMap from '@/components/ServiceAreaMap';
-import ReviewBadgeBar from '@/components/ReviewBadgeBar';
+import dynamic from 'next/dynamic';
+const ServiceAreaMap = dynamic(() => import('@/components/ServiceAreaMap'));
+const ReviewBadgeBar = dynamic(() => import('@/components/ReviewBadgeBar'));
 
 const serviceIcons: Record<string, React.ReactNode> = {
   'lawn-mowing': <Scissors className="h-7 w-7" />,
@@ -45,7 +46,7 @@ export default function Home() {
             priority
             sizes="100vw"
             quality={60}
-            className="object-cover object-[28%_center]"
+            style={{ objectFit: 'cover', objectPosition: '28% center' }}
           />
           {/* Left-to-right dark green wash keeps the headline bold and readable. */}
           <div className="absolute inset-0 bg-gradient-to-r from-deep-forest/90 via-deep-forest/65 to-deep-forest/10" />
@@ -164,7 +165,7 @@ export default function Home() {
           fill
           sizes="100vw"
           quality={60}
-          className="object-cover object-[50%_56%]"
+          style={{ objectFit: 'cover', objectPosition: '50% 56%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-deep-forest/95 via-deep-forest/65 to-deep-forest/5" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
@@ -194,7 +195,16 @@ export default function Home() {
           <div className="grid gap-6 sm:grid-cols-2">
             {gallery.map((g) => (
               <div key={g.src} className="overflow-hidden rounded-2xl border border-cream-line bg-white p-2 shadow-sm">
-                <Image src={g.src} alt={g.alt} width={g.w} height={g.h} sizes="(max-width: 640px) 92vw, 46vw" quality={60} className="h-72 w-full rounded-xl object-cover" />
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  width={g.w}
+                  height={g.h}
+                  sizes="(max-width: 640px) 92vw, 46vw"
+                  quality={60}
+                  className="h-72 w-full rounded-xl"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             ))}
           </div>
